@@ -1,0 +1,106 @@
+\documentclass[11pt,twoside,a4paper]{book}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{upgreek}
+\usepackage{hyperref}
+\usepackage{a4wide}
+\usepackage{multirow}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[babel,english=american]{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage[hang]{caption}
+\usepackage{sparticles}
+\usepackage{subfigure}
+%\usepackage{icomma} % kein Leerraum nach Komma als Dezimaltrennzeichen,kann Probleme mit dcolumn machen
+\usepackage{feynmf}
+\usepackage[separate-uncertainty,multi-part-units = single]{siunitx}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+
+\definecolor{MyColour3}{rgb}{0.0,1.0,0.0} %
+
+\definecolor{MyColour38}{rgb}{1.0,1.0,0.0} %
+\definecolor{MyColour94}{rgb}{1.0,0.0,0.0}
+\definecolor{MyColour102}{rgb}{0.0,0.0,1.0}
+\definecolor{black}{rgb}{0.0,0.0,0.0}
+\newcommand{\legend}{\begin{tabular}{clclcl}
+ \colorbox{MyColour3}{\textcolor{MyColour3}{\phantom{M}}}     &  \ttb 
+& \colorbox{MyColour94}{\textcolor{MyColour94}{\phantom{M}}}   &
+\ttb~other &
+\colorbox{MyColour102}{\textcolor{MyColour102}{\phantom{M}}} & Single
+$t$, $t$-Ch \\[2mm]
+ \colorbox{MyColour38}{\textcolor{MyColour38}{\phantom{M}}}   &  Single
+$t$, $tW$-Ch &  \colorbox{black}{\textcolor{MyColour38}{\phantom{M}}} 
+&  \multicolumn{2}{c}{$W \rightarrow \mu \nu$}    &
+\end{tabular} \\}
+
+\hypersetup{colorlinks=true, linkcolor=darkblue, urlcolor=darkblue,
+citecolor=darkblue}
+\newcommand{\abb}[1]{\hyperref[#1]{Abbildung~\ref*{#1}}}
+\newcommand{\tab}[1]{\hyperref[#1]{Tabelle~\ref*{#1}}}
+\newcommand{\form}[1]{\hyperref[#1]{Gleichung~\ref*{#1}}}
+\newcommand{\eq}[1]{\hyperref[#1]{Gleichung~\ref*{#1}}}
+\newcommand{\kap}[1]{\hyperref[#1]{Kapitel~\ref*{#1}}}
+\newcommand{\ttb}[0]{$t\overline{t}$}
+\newcommand{\hme}[0]{$^{-1}$}
+\newcommand{\ttgamma}[0]{\ensuremath{\mathrm{t}\overline{\mathrm{t}} \gamma} }
+\newcommand{\todo}[1]{\textbf{TODO: #1}}
+\newcommand{\pt}{\ensuremath{p_{\mathrm{T}}} }
+
+\setcounter{tocdepth}{2}
+\setlength{\parindent}{0in}
+
+\makeatletter
+\DeclareRobustCommand*{\bfseries}{%
+  \not@math@alphabet\bfseries\mathbf
+  \fontseries\bfdefault\selectfont
+  \boldmath
+}
+\makeatother
+%\setlength{\parindent}{0em}
+\begin{document}
+\pagenumbering{roman}
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+   ~ \\
+   \vspace{0.2cm}
+      {\Huge\bf{Probing the top-quark photon vertex with the CMS detector}\\}
+   \vspace{2.0cm}
+     von \\
+   \vspace{0.5cm}
+      {\Large Till Arndt} \\
+   \vspace{1.5cm}
+      {\Large Masterarbeit in Physik}\\
+   \vspace{1.0cm}
+     vorgelegt der \\
+   \vspace{0.2cm}
+      {\Large Fakult\"at f\"ur Mathematik, Informatik und
+Naturwissenschaften\\}
+      {\Large der Rheinisch-Westf\"alischen Technischen Hochschule
+Aachen \\}
+   \vspace{1.3cm}
+     im \\
+   \vspace{0.2cm}
+      {\Large Juni 2010}\\
+   \vspace{1.5cm}
+      angefertigt im \\
+   \vspace{0.3cm}
+      {\Large III. Physikalischen Institut B \\}
+   \vspace{0.3cm}
+      bei\\
+   \vspace{0.3cm}
+      {\Large Prof.~Dr.~A.~Stahl \\}
+
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\input{./Einleitung}
+\input{./Simulation}
+\input{./Anormalous}
+
+\end{document}

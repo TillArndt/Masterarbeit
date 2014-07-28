@@ -1,0 +1,68 @@
+\chapter{Anormalous Couplings}
+
+In this chapter a benchmark study for anomalous couplings of the top quark is presented. A generator study is used to evaluate the sensitivity of a possible \ttgamma analysis for a non zero magnetic dipole moment of the top quark.
+\section{Theoretical Background}
+\subsection{The top-photon Vertex}
+
+As previously mentioned \todo{Link} the \ttgamma Lagrangian can be described as shown in  Equation \ref{eq_ano_ttg} \todo{ Zitat}.
+
+\begin{equation}
+  \mathcal{L}_{\ttgamma} = -e Q_t \overline{t} \gamma^{\mu} t A_{\mu} - e \overline{t} \frac{i \sigma^{\mu \nu}}{m_t} (d_V^{\gamma} + i d_a^{\gamma} \gamma_5) t A_{\mu}
+  \label{eq_ano_ttg}
+  \end{equation}
+
+Here the first term is the contribution from the standard model, where the Lagrangian is proportional to the top-quark charge $Q_t$.\\
+In the secind term $d_a^{\gamma}$ and $d_V^{\gamma}$ are a possible electric- or  magnetic-dipole moment of the top quark, which would lead to loop corrections to the coupling strenght of photons to top quarks. The electric-dipole moment is supposed to be heavily suppressed in the Standard Model \todo{find Citation} and the magnetic-dipole moment is predicted to be zero. Consequently, any meaningfull contribution should come from physics beyond the standard model. The magnetic-dipole moment was already discussed in another analysis \todo{Cite Markus}, therefore this analysis will look into a possible magnetic-dipole moment.\\
+The  magnetic dipole moment can be connected to a hypothetical non-point like charge distribution, which would lead to a non zero radius of the top quark. Following \todo{Citation} the relation is shown in Equation \ref{eq_ano_rad}.
+
+\begin{equation}
+R_t = \frac{\sqrt{6}}{\Lambda_{\ast}} \hspace{1.cm} d_V^{\gamma} = \frac{\rho m_t^2}{\Lambda_{\ast}}
+\label{eq_ano_rad}
+\end{equation}
+
+Here $\rho$ is a $\mathcal{O}(1)$ number, $\Lambda_{\ast}$ is the scale factor and $m_t$ is the top-quark mass.\\
+A non zero magnetic-dipole moment could have an effect on \ttgamma events. In this chapter several observables are investigated in order to assess their sensitivity. The production cross section is also examined.
+
+\section{Investigation with Simulated Events}
+
+The generator WHIZARD is used to generate events for different top-quark magnetic dipole moments. The factorized $2 \to 7$ approach explained in Section \ref{ch_simu_con} and shown in Equation \ref{eq_ano_fac} is used.
+
+\begin{equation}
+\begin{split}
+& \mathrm{pp}\to \ttgamma,  \mathrm{t} \to \mathrm{bxx},  \overline{\mathrm{t}} \to \overline{\mathrm{b}} \mathrm{xx} \\
+& \mathrm{pp}\to \mathrm{t} \overline{\mathrm{t}},  \mathrm{t} \to \mathrm{bxx} \gamma,  \overline{\mathrm{t}} \to \overline{\mathrm{b}} \mathrm{xx} \\
+& \mathrm{pp}\to \mathrm{t} \overline{\mathrm{t}},  \mathrm{t} \to \mathrm{bxx},  \overline{\mathrm{t}} \to \overline{\mathrm{b}} \mathrm{xx} \gamma \\
+&  x\ = \ \mathrm{u}, \mathrm{d}, \mathrm{s}, \mathrm{c}, \overline{\mathrm{u}}, \overline{\mathrm{d}},  \overline{\mathrm{s}},  \overline{\mathrm{c}}, \mathrm{e}^{\pm}, \mu^{\pm}, \tau^{\pm}, \nu_{\mathrm{e},\mu,\tau}, \overline{\nu}_{\mathrm{e},\mu,\tau} 
+\end{split}
+\label{eq_ano_fac}
+\end{equation}
+
+These events also include photons which are not radiated from the top quark making them less sensitive for anomalous couplings, but it is difficult to separate these processes.\\
+Only the output of the matrix element generator is compared here. The detector response or any other uncertainties are not included here.
+There should be a clear difference between the different scenarios, otherwise a real analysis using measured data is not reasonable.\\
+The values chosen here for the multiple scenarios are shown in equation \ref{eq_ano_val}.
+
+\begin{equation}
+d_V^{\gamma} = 0.,\; 0.06,\; 0.08,\; 0.12,\; 0.18,\; 0.30
+\label{eq_ano_val}
+\end{equation}
+
+The highest value of $d_V^{\gamma} = 0.30$ corresponds to a "radius" of $R_{\mathrm{t}} = \SI{0.65d-3}{\femto \meter}$. The numbers were basically chosen arbitrarily. One point of orientation for the choice where the limits on the magnetic dipole moment of the top quark \todo{Citation}, the other was the radius of the proton $R_{\mathrm{p}} \approx \SI{1}{\femto \meter}$. The proton radius should be significantly greater than the radius of the top quark. \\
+
+
+\begin{figure}
+  \subfigure[$\pt(\gamma)$]{
+    \includegraphics[width = 0.67\textwidth] {Bilder/photonEt_Anomalous}
+  }
+  \\
+    \subfigure[$\Delta \mathrm{R} (\gamma, \mathrm{q})$]{
+    \includegraphics[width = 0.67\textwidth] {Bilder/dRphotonQ_Anomalous}
+  }
+      \subfigure[$\Delta \mathrm{R} (\gamma, \mathrm{t})$ \todo{Caption}]{
+    \includegraphics[width = 0.67\textwidth] {Bilder/dRphotonT_Anomalous}
+  }
+  \caption{Comparison between the MADGRAPH and WHIZARD generators. All distributions are normalized to unity.}
+  \label{fig_ano_comp}
+\end{figure}
+
+The results are shown in Figure \ref{fig_ano_comp}. 
