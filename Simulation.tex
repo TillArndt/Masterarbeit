@@ -1,13 +1,26 @@
 \chapter{Production of Simulated Events}
 
-After discussing the general methods for simulating the dectector response in the CMS collaboration in Section \textbf{TODO: Link}, this chapter will deal with the specific simulation of the signal process applied in this analysis. 
+After discussing the general methods for simulating the detector response in the CMS collaboration in Section \textbf{TODO: Link}, this chapter will deal with the specific simulation of the signal process applied in this analysis (see Section \ref{ch_simu_con}).\\
+The two matrix element generators WHIZARD \cite{Moretti:2001zz} \cite{Kilian:2007gr} and MADGRAPH \cite{Alwall:2014hca} are used to generate \ttgamma events and compared to each other in Section \ref{ch_simu_comp}.\\
+The cross section calculation for the \ttgamma process is also discussed \todo{Link ?}.
+
 \section{Concept}
 \label{ch_simu_con}
-In order to simulate \ttgamma events, several strategies are possible. They are shown in Figure \todo{Heiners Plot, plus citation}.\\
-The $2 \to 3$ process takes the least time to generate and considers initial state radiation, but it does not take into account any interferences or photon radiation from secondary particles.
-This process is later used to compare generators, but otherwise it is not sufficiently accurate for this analysis.\\
-The $2 \to 5$ process is a compromise between the time needed for generation and accuracy. Interferences and photon radiation from the top-quark decay are considered up to the W-boson and b-quark. This method has been used in \todo{Cite Heiner}.\\
-For a complete simulation of a \ttgamma events the $2 \to 7$ process includes all interference effects and radiation from secondary particles. Idealy it should be used to simulate \ttgamma events, but computation time severly limits its usefulness. \\
+In order to simulate \ttgamma events, several methods can be used (see Figure \ref{fig_simu_strat}). The difference lies the extent to which the decay of the top quark is included in the calculation, so the methods can be identified by the number of final state particles. The more final state particles are required, the more sophisticated the calculation becomes.\\
+
+
+
+\begin{figure}
+    \includegraphics[width = 0.8\textwidth] {Bilder/SimulationStrategy}
+    \caption{\todo{Caption} \cite{tholen:ma}}
+    \label{fig_simu_strat}
+\end{figure}
+  
+
+The $2 \to 3$ process takes the least time to generate and considers initial state radiation and its interference, but it does not take into account any interferences or photon radiation from secondary particles. Only the photon can be measured directly by the CMS experiment.
+This process is later used to compare the two generators, but otherwise it is not sufficiently accurate for a \ttgamma analysis.\\
+The $2 \to 5$ process is a compromise between the time needed for generation and accuracy. Interferences and photon radiation from the top-quark decay are considered up to the W-boson and b-quark. There is also a contribution from non \ttgamma events, which lead to the same final state. Here the two b quarks as well as the photon can be measured directly by the CMS experiment. \\
+For a complete simulation of a \ttgamma events the $2 \to 7$ process includes all interference effects and radiation from secondary particles. Again, there are contributions from non \ttgamma events. It also includes all final state particles that can be measured by the CMS detector. Ideally it should be used to simulate \ttgamma events, but computation time severely limits its usefulness. \\
 In this analysis a factorized $2 \to 7$ approach is used, generating events by combining the processes shown in Equation \ref{eq_simu_fac}. 
 
 \begin{equation}
@@ -20,27 +33,27 @@ In this analysis a factorized $2 \to 7$ approach is used, generating events by c
 \label{eq_simu_fac}
 \end{equation}
 
-This approach includes photon radiation from secondary particles and initial state particles, but it only includes interference effects from the initial state particles. \\
-The factorized $2 \to 7$ approach should lead to a description which is considerably closer to the "real" \todo{Rephrase} measurement by allowing the matrix element generation of all final state particles.\\
-To validate this approach the result from two different generators, MADGRAPH and WHIZARD will be compared in Section \ref{ch_simu_comp}. The results should be compatible. \\
-The leading order cross section calculated by the matrix element generators is not reliable, therefore a correction factor should be used in an analysis. This correction factor is difficult to calculate, so this is done by an expert theoretical physicist. \\ 
-\todo{Some reason why this works}
+The factorized $2 \to 7$ approach constitutes a compromise between computation time and exactness. It includes photon radiation from secondary particles and initial state particles, but it only includes interference effects from the initial state particles. \\
+It allows for the inclusion of all final state particles that are measured by the CMS detector. So the simulation is close to the measurement.\\
+To validate this approach the result from two different generators, MADGRAPH and WHIZARD, are compared in Section \ref{ch_simu_comp}. The results should be compatible. \\
+The leading order cross section calculated by the matrix element generators is not reliable for the \ttgamma process. In a previous analysis the next to leading order cross section was twice as big as the leading order cross section. A next to leading order cross section is used in this analysis. This next to leading order (NLO) cross section is provided by theory. \\ 
+\todo{Some more stuff ?}
 
 \section{Generator Comparison}
 \label{ch_simu_comp}
 
-In this section the two leading order matrix element generators MADGRAPH and WHIZARD are compared \todo{Citations} for the $pp \to \ttgamma$ process. MADGRAPH is widely used within the CMS collaboration. WHIZARD has been used in a previous \ttgamma analysis \todo{cite Heiner} and it allows for the test of models with a non Standard Model coupling between top quark and photon. Both are used to generate the matrix element of a given process and produce events in the LHEF format \todo{Link or Citation}. Further effects like hadronization are not considered, as other algorithms like PYTHIA \todo{Citation} are used for this purpose within CMS (see Chapter \todo{Link} for a description of event simulation within CMS). In this section only the output of MADGRAPH and WHIZARD are compared, without any further simulation. 
+This section compares the two leading order matrix element generators MADGRAPH and WHIZARD for the $pp \to \ttgamma$ process. MADGRAPH is widely used within the CMS collaboration. WHIZARD has been used in a previous \ttgamma analysis \cite{CMS-PAS-TOP-13-011} and it allows for the test of models with a non Standard Model coupling between top quark and photon. Both are used to generate the matrix element of a given process and produce events in the LHEF format \cite{Alwall:2006yp}. They are interfaced with LHAPDF \cite{Whalley:2005nh} and FastJet\cite{Cacciari:2011ma}. Further effects like hadronization are not considered, as other algorithms like PYTHIA \todo{Citation} are used for this purpose within CMS (see Chapter \todo{Link} for a description of event simulation within CMS).
 
 \subsection{The $2 \to 3$ Process}
 
-As a starting point the $2 \to 3$ process is investigated (see Equation \ref{eq_simu_2to3}). MADGRAPH and WHIZARD are both used two generate events and several kinematic distributions are compared. There should generally be a high degree of conformance.
+The $2 \to 3$ process is shown in Equation \ref{eq_simu_2to3}. MADGRAPH and WHIZARD are both used to generate events and several kinematic distributions are compared. There should generally be a high degree of conformance.
 
 \begin{equation}
 \mathrm{pp} \to \ttgamma
 \label{eq_simu_2to3}
 \end{equation}
 
-The integral of the matrix element diverges if massless particles are emitted with very low $P_T$ (infrared divergence) or collineary to the mother particle (colinear divergence). In order to make the integral safe to compute kinematic cuts are used to restrict the phase space for photons and jets. Additionally, further cuts are used to speed up the generation process by narrowing the phase space. These cuts have to be below the selection cuts that are used later in the analysis \todo{Link}. Otherwise the final result would depend on the value of the cuts. \\
+The integral of the matrix element diverges if massless particles are emitted with very low $P_T$ (infrared divergence) or collinear to the mother particle (collinear divergence). In order to make the integral safe to compute, kinematic cuts are used to restrict the phase space for photons and jets. Additionally, further cuts, for example on $\eta$, are used to speed up the generation process by narrowing the phase space. These cuts have to be below the selection cuts that are used later in the analysis \todo{Link}. Otherwise, smearing effects would not be considered and the respective uncertainties could not be calculated. \\
 The kinematic cuts and the technical parameters used for the generation are shown in Table \ref{tab_simu_2to3}. 
 
 \begin{table}[ht]
@@ -51,9 +64,9 @@ The kinematic cuts and the technical parameters used for the generation are show
     \hline
     Renormalization scale & $ \SI{174.3}{\giga \electronvolt} $ \\
     \hline
-    Factorisation scale & $ \SI{174.3}{\giga \electronvolt} $ \\
+    Factorization scale & $ \SI{174.3}{\giga \electronvolt} $ \\
     \hline
-    PDF & cteq6l1 \todo{Citation} \\
+    PDF & cteq6l1 \cite{Pumplin:2002vw} \\
     \hline
     \multicolumn{2}{|c|}{Cuts} \\
     \hline
@@ -67,17 +80,17 @@ The kinematic cuts and the technical parameters used for the generation are show
      \label{tab_simu_2to3}
 \end{table}
 
-The calculated cross sections are found in Equation \ref{eq_simu_2to3_cross}. The errors are those given by the leading order calculation basically depending on how much computing time is invested into the calculation. They do not take into account any next-to leading order effects, therefore they are a lot lower than the errors on a theoretical cross section calculation normally found in particle physics. \\
-The difference between the generators of $\SI{0.7 }{\percent}$ or $ 1.6\; \sigma$ are consequently not considered significant.
+The calculated cross sections are found in Equation \ref{eq_simu_2to3_cross}. The errors are given by the leading order calculation depending on how much computing time is invested into the calculation. They do not take into account any next-to leading order effects, therefore they are a lot lower than the errors on a theoretical cross section calculation normally used in particle physics. \\
+The difference between the generators of $\SI{0.7 }{\percent}$ or $ 1.6\; \sigma$ are not significant.
 
 \begin{equation}
 \mathrm{WHIZARD: }\; \sigma_{\ttgamma} = \SI{731 \pm 3}{\femto \barn} \hspace{1.cm} \mathrm{MADGRAPH: }\;  \sigma_{\ttgamma} = \SI{735.8 \pm 0.3}{\femto \barn}
 \label{eq_simu_2to3_cross}
 \end{equation}
 
-Additionally to the calculated cross sections, the events generated by MADGRAPH and WHIZARD should be compared. This is done here by looking  at several kinematic distribution and comparing them to each other. Agreement over a wide range of phase space is expected. \\
+Additionally to the calculated cross sections, the events generated by MADGRAPH and WHIZARD are compared. This is done by looking  at several kinematic distribution and comparing them to each other. \\
 The observables shown in Figures \ref{fig_simu_comp_2to3_1} and \ref{fig_simu_comp_2to3_2} agree for MADGRAPH and WHIZARD over a wide range.\\
-This shows that MADGRAPH and WHIZARD are compatible for a simple $2 \to 3$ process, but more complex processes still need to be evaluated.
+This shows that MADGRAPH and WHIZARD are compatible for a simple $2 \to 3$ process.
 
 \begin{figure}
   \subfigure[$\pt(\mathrm{t})$]{
@@ -90,7 +103,7 @@ This shows that MADGRAPH and WHIZARD are compatible for a simple $2 \to 3$ proce
       \subfigure[$\pt(\gamma)$ \todo{Caption}]{
     \includegraphics[width = 0.67\textwidth] {Bilder/photonEt_Comp_2to3}
   }
-  \caption{Comparison between the MADGRAPH and WHIZARD generators. All distributions are normalized to unity.}
+  \caption{Comparison between the MADGRAPH and WHIZARD generators for the $2 \to 3$ process. All distributions are normalized to unity.}
   \label{fig_simu_comp_2to3_1}
 \end{figure}
 
@@ -105,21 +118,21 @@ This shows that MADGRAPH and WHIZARD are compatible for a simple $2 \to 3$ proce
       \subfigure[$\pt(\gamma)$ \todo{Caption}]{
     \includegraphics[width = 0.67\textwidth] {Bilder/dRphotonT_Comp_2to3}
   }
-  \caption{Comparison between the MADGRAPH and WHIZARD generators. All distributions are normalized to unity.}
+  \caption{Comparison between the MADGRAPH and WHIZARD generators for the $2 \to 3$. All distributions are normalized to unity.}
   \label{fig_simu_comp_2to3_2}
 \end{figure}
 
 
 \subsection{The $2 \to 5$ process}
 
-The $2 \to 5$ process has previously been used in a \ttgamma analysis \todo{cite}. Therefore, it is also investigated in this study. Equation \todo{ref} shows the generated reaction. \\
+The $2 \to 5$ process has previously been used in a \ttgamma analysis \cite{CMS-PAS-TOP-13-011}. Therefore it is also investigated in this study. Equation \ref{eq_simu_2to5} shows the generated reaction. \\
 
 \begin{equation}
 \mathrm{pp} \to \mathrm{W}^+ \mathrm{W}^- \mathrm{b} \overline{\mathrm{b}} \gamma
 \label{eq_simu_2to5}
 \end{equation}
 
-The cuts and scales used for the generation are shown in Table \ref{tab_simu_2to5}. The renormalization and factorization scales are not the same for both generators. This is unfortunate, but due to time constraints a sample generated for \todo{cite Heiner} was used. In this WHIZARD sample the scale was $\SI{172.5}{\giga \electronvolt} + \pt(\gamma)$, which is not possible in MADGRAPH. As it would have taken a lot of time to re-generate an appropriate amount of events, this difference could not be mitigated. \todo{maybe rephrase}\\ 
+The cuts and scales used for the generation are shown in Table \ref{tab_simu_2to5}. The renormalization and factorization scales are not the same for both generators. A previously generated sample is used due to time constraints. In this WHIZARD sample the scale was $\SI{172.5}{\giga \electronvolt} + \pt(\gamma)$. A variable scale taking into account the $\pt$ of the photon is not possible in MADGRAPH.\\
 
 \begin{table}[ht]
 \centering
@@ -129,9 +142,9 @@ The cuts and scales used for the generation are shown in Table \ref{tab_simu_2to
     \hline
     Renormalization scale & $ \SI{172.5}{\giga \electronvolt} $ \\
     \hline
-    Factorisation scale & $ \SI{172.5}{\giga \electronvolt} $ \\
+    Factorization scale & $ \SI{172.5}{\giga \electronvolt} $ \\
     \hline
-    PDF & cteq6l1 \todo{Citation} \\
+    PDF & cteq6l1 \\
     \hline
     \multicolumn{2}{|c|}{Cuts} \\
     \hline
@@ -143,14 +156,14 @@ The cuts and scales used for the generation are shown in Table \ref{tab_simu_2to
      \label{tab_simu_2to5}
 \end{table}
 
-The resulting cross section is shown in Equation \ref{eq_simu_2to5_cross}. The cross section is of course larger than the one  of the $2 \to 3$ process (see Equation \ref{eq_simu_2to3_cross}), as more feynman diagrams are contributing to the final state. The difference between the cross sections obtained from MADGRAPH and WHIZARD of \SI{6}{\percent} is large compared to the respective uncertainties. It is probably due to the different factorisation scale described above.\\
+The resulting cross section is shown in Equation \ref{eq_simu_2to5_cross}. The cross section is larger than the one of the $2 \to 3$ process (see Equation \ref{eq_simu_2to3_cross}), as more Feynman diagrams are contributing to the final state. The difference between the cross sections obtained from MADGRAPH and WHIZARD of \SI{6}{\percent} is large compared to the respective uncertainties. The dominant contribution arises from the different factorization scale described above.\\
 
 \begin{equation}
 \mathrm{WHIZARD: }\; \sigma_{\ttgamma} = \SI{908 \pm 2}{\femto \barn} \hspace{1.cm} \mathrm{MADGRAPH: }\; \sigma_{\ttgamma} = \SI{962.7 \pm 0.4}{\femto \barn}
 \label{eq_simu_2to5_cross}
 \end{equation}
 
-Several observables are compared for MADGRAPH and WHIZARD, the result is shown in Figures \ref{fig_simu_comp_2to5_1} and \ref{fig_simu_comp_2to5_2}. They largely agree over a wide range. In the observable $\Delta \mathrm{R} (\gamma,\mathrm{b})$ there is a visible difference for low values (see Figure \ref{fig_simu_comp_2to5_drgb}). This might be due to different modelling for nearly colinear radiation. In any actual analysis the part of the phase space where these discrepancies exist will be cut by the selection or clustered into the jet.
+Several observables are compared for MADGRAPH and WHIZARD, the result is shown in Figures \ref{fig_simu_comp_2to5_1} and \ref{fig_simu_comp_2to5_2}. They largely agree over a wide range. In the observable $\Delta \mathrm{R} (\gamma,\mathrm{b})$ it shows a visible difference for low values (see Figure \ref{fig_simu_comp_2to5_drgb}). This might be due to different modeling for nearly collinear radiation. In any actual analysis the part of the phase space where these discrepancies exist are cut by the selection or the photon and the quark would be clustered together into a jet.
 
 \begin{figure}
   \subfigure[$\pt(\gamma)$]{
@@ -163,7 +176,7 @@ Several observables are compared for MADGRAPH and WHIZARD, the result is shown i
       \subfigure[$|\eta |(\gamma)$ \todo{Caption}]{
     \includegraphics[width = 0.67\textwidth] {Bilder/photonEta_Comp_2to5}
   }
-  \caption{Comparison between the MADGRAPH and WHIZARD generators. All distributions are normalized to unity.}
+  \caption{Comparison between the MADGRAPH and WHIZARD generators for the $2 \to 5$ process. All distributions are normalized to unity.}
   \label{fig_simu_comp_2to5_1}
 \end{figure}
 
@@ -179,28 +192,40 @@ Several observables are compared for MADGRAPH and WHIZARD, the result is shown i
       \subfigure[$\pt(\mathrm{b})$ \todo{Caption}]{
     \includegraphics[width = 0.67\textwidth] {Bilder/bquarkPt_Comp_2to5}
   }
-  \caption{Comparison between the MADGRAPH and WHIZARD generators. All distributions are normalized to unity.}
+  \caption{Comparison between the MADGRAPH and WHIZARD generators for the $2 \to 5$ process. All distributions are normalized to unity.}
   \label{fig_simu_comp_2to5_2}
 \end{figure}
 
 \subsection{The $2 \to 7$ Process}
 
-As described in Section \ref{ch_simu_con} the final simulation uses a factorized $2 \to 7$ process. The details are shown in Equation \ref{eq_simu_fac}.\\
-Again, the two generators MADGRAPH and WHIZARD are compared. Using WHIZARD the three processes can not be generated together, so they are generated separately and later added considering the scaling. Additionally, the "decay" syntax of WHIZARD requires looser cuts set for the decays and the final cuts being set as selection further complicating the generation. Consequently, MADGRAPH will be later used in Section \todo{Link}.\\
-For simplicity reasons, only events where one of the top quarks decays into a muon (via the W boson) and the other decays into jets are used for the comparison. This is also the channel later used in this analysis in Section \todo{Link}. The full decay of the top is included in the generation, because the overall aim is to use the generated events for an official full simulation by the CMS collaboration. Therefore, other groups within CMS should be able to use this sample.\\
-The parameters for the generation arrre shown in Table \ref{tab_simu_2to7}.
+As described in Section \ref{ch_simu_con}, the final simulation uses a factorized $2 \to 7$ process. The details are shown in Equation \ref{eq_simu_fac_2}.\\
+
+\begin{equation}
+\begin{split}
+& \mathrm{pp}\to \ttgamma,  \mathrm{t} \to \mathrm{bxx},  \overline{\mathrm{t}} \to \overline{\mathrm{b}} \mathrm{xx} \\
+& \mathrm{pp}\to \mathrm{t} \overline{\mathrm{t}},  \mathrm{t} \to \mathrm{bxx} \gamma,  \overline{\mathrm{t}} \to \overline{\mathrm{b}} \mathrm{xx} \\
+& \mathrm{pp}\to \mathrm{t} \overline{\mathrm{t}},  \mathrm{t} \to \mathrm{bxx},  \overline{\mathrm{t}} \to \overline{\mathrm{b}} \mathrm{xx} \gamma \\
+&  x\ = \ \mathrm{u}, \mathrm{d}, \mathrm{s}, \mathrm{c}, \overline{\mathrm{u}}, \overline{\mathrm{d}},  \overline{\mathrm{s}},  \overline{\mathrm{c}}, \mathrm{e}^{\pm}, \mu^{\pm}, \tau^{\pm}, \nu_{\mathrm{e},\mu,\tau}, \overline{\nu}_{\mathrm{e},\mu,\tau} 
+\end{split}
+\label{eq_simu_fac_2}
+\end{equation}
+
+Again, the two generators MADGRAPH and WHIZARD are compared. Using WHIZARD the three factorized processes cannot be generated together, so they are generated separately and later combined taking the scaling into account.\\
+For both generators the original $ \mathrm{pp} \to \ttgamma$ process and the decay of the top quarks are distinct processes. In MADGRAPH this is handled internally. The decay in WHIZARD requires a separate set of kinematic cuts. These have to be below the final generator cuts given in Table \ref{tab_simu_2to7}, because kinematic uncertainties lead to a smearing effect in the kinematic distributions at the value of the cuts. If the cut values used for the decays are too close to the generator cuts, this smearing is not modeled correctly. As a further complication WHIZARD does not take the final generator cuts into account when calculating the cross section. They are only used to select the events written to the output files. The cross section has to be re-weighted using the number of events in the output and the number of originally requested events. Consequently, the event generation is taking more time as a lot of actually generated events are cut. \\
+For reasons of simplicity, only events where one of the top quarks decays into a muon (via the W boson) and the other decays into jets are used for the comparison. This is also the channel later used in this analysis in Section \todo{Link}. The full decay of the top is included in the generation, because these inclusive \ttgamma events are used for an official simulation by the CMS collaboration.\\
+The parameters for the generation are shown in Table \ref{tab_simu_2to7}.
 
 \begin{table}[ht]
 \centering
-    \caption{Technical parameters used for the generation of \ttgamma events (according to\\ Equation \ref{eq_simu_fac}. The scales are fixed in MADGRAPH. The parameters are the same for both generators.}
+    \caption{Technical parameters used for the generation of \ttgamma events (according to\\ Equation \ref{eq_simu_fac}). The scales are fixed in MADGRAPH. The parameters are the same for both generators.}
     \begin{tabular}{| l | l |}
 
     \hline
     Renormalization scale & $ \SI{174.3}{\giga \electronvolt} $ \\
     \hline
-    Factorisation scale & $ \SI{174.3}{\giga \electronvolt} $ \\
+    Factorization scale & $ \SI{174.3}{\giga \electronvolt} $ \\
     \hline
-    PDF & cteq6l1 \todo{Citation} \\
+    PDF & cteq6l1 \\
     \hline
     \multicolumn{2}{|c|}{Cuts} \\
     \hline
@@ -220,10 +245,10 @@ The parameters for the generation arrre shown in Table \ref{tab_simu_2to7}.
      \label{tab_simu_2to7}
 \end{table}
 
-The Result for the generated cross section is shown in equation \ref{eq_simu_2to7_cross}. \\
-The cross section generated by WHIZARD is given without an error. Due to the handling of decays in WHIZARD, the cross section calculated by the generator, does not apply the final cuts on the decay products, therefore the actual cross section of the decay has to be calculated using the number of remaining events. Additionally, the branching ratio of the simulated decay channels is not considered in the cross section results requiring further calculations by the user, especially in the channels wher a photon is required in the decay. \\
-Of course all these calculation steps contribute to the uncertainty and their contributions would have to be estimated separately and then propagated to the final value. This is not done in this analysis. The cross sections are used here to compare the generators, therefore an exact calculation of these errors is deemed unnecessary. As mentioned before, a next to leading order cross section should be used in the analysis anyway. \\
-The difference of $\SI{12.9}{\percent}$ between the two generators is therefore considered to be in the expected range. 
+The result for the generated cross section is shown in Equation \ref{eq_simu_2to7_cross}. 
+The cross section generated by WHIZARD is given without an error. As mentioned above, the cross section calculated by WHIZARD does not take the final cuts on the decay products into account. The actual cross section of the decay has to be calculated using the number of remaining events. Additionally, the branching ratio of the simulated decay channels is not considered in the cross section results requiring further calculations by the user, especially in the channels where a photon is required in the decay. \\
+Of course all these calculation steps contribute to the uncertainty and their contributions would have to be estimated separately and then propagated to the final value. This is not done in this analysis. The cross sections are used here to compare the generators, so an exact calculation of these errors is unnecessary. As mentioned before, a next to leading order cross section should be used in the analysis making these differences inconsequential. \\
+The difference of $\SI{12.9}{\percent}$ between the two generators is in the expected range. 
 
 \begin{equation}
 \mathrm{WHIZARD: }\; \sigma_{\ttgamma} = \SI{1408}{\femto \barn} \hspace{1.cm} \mathrm{MADGRAPH: }\; \sigma_{\ttgamma} = \SI{1227.1 \pm 0.4}{\femto \barn}
@@ -244,7 +269,7 @@ The difference of $\SI{12.9}{\percent}$ between the two generators is therefore 
     \includegraphics[width = 0.67\textwidth] {Bilder/dRphotonB_2to7}
     \label{fig_simu_comp_2to7_drgb}
   }
-  \caption{Comparison between the MADGRAPH and WHIZARD generators. All distributions are normalized to unity.}
+  \caption{Comparison between the MADGRAPH and WHIZARD generators for the factorized $2 \to 7$ process. All distributions are normalized to unity.}
   \label{fig_simu_comp_2to7_1}
 \end{figure}
 
@@ -259,7 +284,7 @@ The difference of $\SI{12.9}{\percent}$ between the two generators is therefore 
       \subfigure[$\pt(\mathrm{q})$ \todo{Caption}]{
     \includegraphics[width = 0.67\textwidth] {Bilder/quarkPt_2to7}
   }
-  \caption{Comparison between the MADGRAPH and WHIZARD generators. All distributions are normalized to unity.}
+  \caption{Comparison between the MADGRAPH and WHIZARD generators for the factorized $2 \to 7$ process. All distributions are normalized to unity.}
   \label{fig_simu_comp_2to7_2}
 \end{figure}
 \begin{figure}
@@ -274,11 +299,12 @@ The difference of $\SI{12.9}{\percent}$ between the two generators is therefore 
   \label{fig_simu_comp_2to7_3}
 \end{figure}
 
-The comparison for the two generators shown in Figures \ref{fig_simu_comp_2to7_1}, \ref{fig_simu_comp_2to7_2} and \ref{fig_simu_comp_2to7_3} displays compatibility over a long range of phase space. As before (see Figure \ref{fig_simu_comp_2to5_drgb}) the angle between photon and b quark $\Delta \mathrm{R}(\gamma,\mathrm{b})$ shows some discrepancies (see Figure \ref{fig_simu_comp_2to7_drgb}) for low values. This might be a genuine disagreement between the two generators, but because of the way jets and isolations are used at a proton proton collider experiment such as CMS these differences are irrelevant for any actual analysis.
+The comparison for the two generators shown in Figures \ref{fig_simu_comp_2to7_1}, \ref{fig_simu_comp_2to7_2} and \ref{fig_simu_comp_2to7_3} displays compatibility over a wide range of phase space. As before (see Figure \ref{fig_simu_comp_2to5_drgb}) the angle between photon and b quark $\Delta \mathrm{R}(\gamma,\mathrm{b})$ shows some discrepancies (see Figure \ref{fig_simu_comp_2to7_drgb}) for low values. This might be a genuine disagreement between the two generators, but because of the way jets and isolations are used at a proton proton collider experiment such as CMS, these differences are irrelevant for any actual analysis.
 Another reason might be a mistake in normalization of the three WHIZARD processes in respect to each other. \\
 
 \section{Conclusion}
 
-In Section \ref{ch_simu_comp} an agreement between the generators MADGRAPH and WHIZARD for multiple ways of simulating \ttgamma events and over a large amount of phase space was shown. The largest differences are found in the cross sections calculated by the two generators. For the factorized $2 \to 7$ approach they are probably due to technical difficulties when using WHIZARD for the simulation, but nevertheless the disagreement hints at the need for a dedicated NLO calculation. These NLO calculations typically calculate a factor to correct the cross section using distributions of kinematic observables \todo{Cite smth.}. The agreement in these observables between WHIZARD and MADGRAPH is therefore an important result.\\  
+\todo{Smth. on the NLO cross section, maybe separate section}
+In Section \ref{ch_simu_comp} an agreement between the generators MADGRAPH and WHIZARD for multiple ways of simulating \ttgamma events and over a large amount of phase space is shown. The largest differences are found in the cross sections calculated by the two generators. For the factorized $2 \to 7$ approach they are probably due to technical difficulties when using WHIZARD for the simulation, but nevertheless the disagreement hints at the need for a dedicated NLO calculation. These NLO calculations typically calculate a factor to correct the cross section using distributions of kinematic observables \todo{Cite smth.}. The agreement in these observables between WHIZARD and MADGRAPH is therefore an important result.\\
 It is shown that WHIZARD and MADGRAPH can both be used to generate \ttgamma events. MADGRAPH is considerably faster and technically easier to use, whereas WHIZARD can easily be used to implement models including anomalous top couplings. \\
-In Chapter \todo{Link} WHIZARD is used for a benchmark study estimating the sensitivity for anomalous top photon couplings. The $2 \to 7$ approach is used in MADGRAPH as the basis for a full CMS event simulation \todo{Link} including hadronization and detector response. A custom calculated cross section is provided. \todo{Some Citation} This new simulation should improve the systematic uncertainties for the $\sigma_{\ttgamma}$ measurement in CMS \todo{Link, maybe Value ?}. 
+In Chapter \todo{Link} WHIZARD is used for a benchmark study estimating the sensitivity for anomalous top photon couplings. The $2 \to 7$ approach is used in MADGRAPH as the basis for a full CMS event simulation \todo{Link} including hadronization and detector response. A custom calculated cross section is provided. \todo{Some Citation, Link to the cross section} This new simulation should improve the systematic uncertainties for the $\sigma_{\ttgamma}$ measurement in CMS \todo{Link, maybe Value ?}. 

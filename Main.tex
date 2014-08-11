@@ -15,7 +15,10 @@
 \usepackage{subfigure}
 %\usepackage{icomma} % kein Leerraum nach Komma als Dezimaltrennzeichen,kann Probleme mit dcolumn machen
 \usepackage{feynmf}
-\usepackage[separate-uncertainty,multi-part-units = single]{siunitx}
+\usepackage[separate-uncertainty,multi-part-units = single,per-mode = reciprocal]{siunitx}
+
+\bibliographystyle{plain}
+
 \definecolor{darkblue}{rgb}{0,0,0.5}
 
 \definecolor{MyColour3}{rgb}{0.0,1.0,0.0} %
@@ -100,7 +103,10 @@ Aachen \\}
 \newpage
 \pagenumbering{arabic}
 \input{./Einleitung}
+\input{./Detector}
 \input{./Simulation}
 \input{./Anormalous}
+
+\bibliography{Masterarbeit}
 
 \end{document}
