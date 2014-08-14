@@ -37,10 +37,175 @@ In 2012 the beam energy was set to \SI{4}{\tera \electronvolt} ($\sqrt{s} = \SI{
 After the current shutdown of LHC ends in 2015 the center of mass energy will be raised to $\sqrt{s} = \SI{13}{\tera \electronvolt}$.
 
 \section{The Compact Muon Solenoid}
+The CMS detector as shown in Figure \ref{fig_det_cms_draw} is shaped cylindrically. It weighs 14000 tons, has a length of 30 meter and a height (diameter) of 15 meters. As a multipurpose detector it consists of mutiple subsystems which are described in the following from the innermost to the outer parts. \\
+The CMS coordinate system is defined as follows: The origin lies in the center of the detector. The z-axis points parallel to the beam pipe in westward direction. The x-axis is directed south, towards the center of the LHC ring. The y-axis points upwards vertically completing the right handed system. Polar and Spherical coordinates are defined using this system.\\ 
 
 \begin{figure}[ht]
+  \centering
     \includegraphics[width = 0.75\textwidth] {Bilder/cms_complete_labelled}
       
   \caption{Vertical section of the whole cms detector. \cite{CMS_Draw}}
-  \label{fig_cms_draw}
+  \label{fig_det_cms_draw}
+\end{figure}
+
+\subsection{The Tracking System}
+
+The purpose of the CMS tracking system is track and vertex reconstruction. Therefore, fine granularity, a high magnetic field and a good resolution are important to distinguish between multiple particles. \\
+To achieve this the tracker is divided into two subsystems. The innermost silicone pixel detector which is as close to the interaction point as possible and the silicone strip detector. \\
+
+\subsubsection{The Pixel Tracker}
+
+The pixel tracker is again  divided into two parts: The barrel pixel and the forward pixel tracker, as shown in Figure \ref{fig_det_cms_pixel}. The barrel part has a length of \SI{53}{\centi \meter} and the pixels have a size of $100 \times \SI{150}{\micro \meter \squared}$. The three layers are positioned at the radii of \SI{4.4}{\centi \meter}, \SI{7.3}{\centi \meter} and \SI{10.2}{\centi \meter} resulting in an design occupancy of \SI{d-4}{} per bunch crossing.\\
+The forward tracker consists of four disks that are placed at $|z| = \SI{34.5}{\centi \meter}$ and $|z|=\SI{46.5}{\centi \meter}$. They have an inner radius of \SI{6}{\centi \meter} and an outer radius of \SI{15}{\centi \meter} \cite{cmsTDR1}. \\
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width = 0.75\textwidth] {Bilder/CMS_Tracker}
+      
+  \caption{The CMS pixel tracker system. \cite{cmsTDR1}}
+  \label{fig_det_cms_pixel}
+\end{figure}
+
+Together the two parts have 66 million channels. The is shown in Equation \ref{eq_det_pix_res} \cite{cmsTDR1}.
+
+\begin{equation}
+r-\phi \; \mathrm{plane}: \; \SI{10}{\micro \meter} \hspace{1cm} z\;\mathrm{Direction}: \; \SI{20}{\micro \meter}
+\label{eq_det_pix_res}
+\end{equation}
+
+\subsubsection{The Silicon Strip Tracker}
+
+The outer part of the tracking system, the silicon strip tracker consists of multiple parts, as shown in Figure \ref{fig_det_cms_strip}.
+The pseudorapidity $\eta = - \ln{(\tan{(\theta / 2)})}$ is often used instead of $\theta$ in order to be independent of the Lorentz boost.\\
+The whole tracker is operated at a temperature of \SI{-20}{ \celsius} to widthstand the high radiation dose it is subjected to. \\
+
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width = 0.75\textwidth] {Bilder/CMS_SiliconTracker}
+      
+  \caption{A sketch of the CMS tracker system. \cite{CMSTrackRes}}
+  \label{fig_det_cms_strip}
+\end{figure}
+
+The overall reconstruction efficiency depends on the energy and the momentum of a particle. Charged hadrons with an energy $E > \SI{100}{\giga \electronvolt}$ can be reconstructed with 95\% efficiency, which falls to 85\% for an energy of $E = \SI{1}{ \giga \electronvolt}$.
+The spatial resolution is shown in Equation \ref{eq_det_strip_res}.  \\ 
+
+\begin{equation}
+r-\phi \; \mathrm{plane}: \; 23-53 \SI{}{\micro \meter} \hspace{1cm} z\;\mathrm{Direction}: \; 230-530 \SI{}{\micro \meter}
+\label{eq_det_strip_res}
+\end{equation}
+
+The momentum resolution depends on the pseudo rapidity $\eta$. It is given in Equation \ref{eq_det_strip_res_pt1} and then decreases with pseudorapidity as shown in Equation \ref{eq_det_strip_res_pt2}.
+
+\begin{equation}
+\frac{\delta \pt}{\pt} \approx 0.005 + 0.015 \cdot \pt [\SI{}{\giga \electronvolt}] \hspace{0.5cm} (|\eta|<1.6)
+\label{eq_det_strip_res_pt1}
+\end{equation}
+
+\begin{equation}
+\frac{\delta \pt}{\pt} \approx 0.005 + 0.06 \cdot \pt [\SI{}{\giga \electronvolt}] \hspace{0.5cm} (|\eta|=2.5)
+\label{eq_det_strip_res_pt2}
+\end{equation}
+
+These high resolutions in the tracker are one of the defining properties of the CMS detector. They are possible through the fine granularity and the high magnetic field \todo{Link or mention field}. \\
+
+\subsection{The Calorimeters}
+
+The purpose of the calorimeter is to measure the energy of the particles produced in the aftermath of the proton proton collisions. The energy loss of these particles is measured, consequently it is desirable to stop most particles in the calorimeter. This is achieved through a high density material.\\
+The different interaction lengths for electromagnetic and strong interactions lead to two different calorimeters: The Electromagnetic Calorimeter (ECAL) and the Hadronic Calorimeter (HCAL). The ECAL measures the energy of light particles mainly interacting electromagnetically like electrons and photons. The HCAL is dedicated to measure particles through the strong interaction, for example baryons.\\
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width = 0.75\textwidth] {Bilder/CMS_Calosys}
+      
+  \caption{Profile of the Calorimeters and the tracking system. \cite{CMStdrEcal}}
+  \label{fig_det_cms_calo}
+\end{figure}
+
+\subsubsection{The Electromagnetic Caorimeter}
+
+The main purpose of the electromagnetic calorimeter (see Figure \ref{fig_det_cms_ecal}) is to measure the energy of light particles like electrons and photons. They are stopped in the main body of the calorimeter consisting of 61,200 lead tungstate (PBWO$_4$) crystals. These crystals are each \SI{230}{\milli \meter } long and placed $5 \times 5$ in so called supercrystals. The length corresponds to 25.8 radiation lengths. The front of the crystal measures to $22 \times \SI{22}{\milli \meter \squared}$ or $0.0174$ in $\Delta \eta$ and $\Delta \phi$.\\
+Silicon avalanche photo diodes measure the emitted scintillation light in the barrel region. In the endcap vacuum photo diodes are used, in both regions the diodes are directly attached to the back of the scintillation crystals.\\
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width = 0.75\textwidth] {Bilder/CMS_Ecal}
+      
+  \caption{Profile of the electromagnetic calorimeter \cite{cmsTDR1}}
+  \label{fig_det_cms_ecal}
+\end{figure}
+
+As shown in Figure \ref{fig_det_cms_ecal}, there is a an additional preshower module in front of the ECAL in the endcaps. Its purpose is to enhance the spatial and energy resolution using silicone strips as active material and lead as absorber. Consequently, 95 \% of photons shower before the first strip of active material. \\
+The overall resolution of the electromagnetic calorimeter is measured by testbeams. The results are shown in Equation \ref{eq_det_cms_ecal}.
+
+\begin{equation}
+\frac{\Delta E}{E} = \frac{\SI{2.8}{\percent}}{\sqrt{E\; [\SI{}{\giga \electronvolt}]}} \oplus \frac{\SI{12}{\percent}}{E\; [\SI{}{\giga \electronvolt}]} \oplus \SI{0.3}{\percent}
+\label{eq_det_cms_ecal}
+\end{equation}
+
+The fiducial region for high energetic photons and electrons of the ECAL covers the $\eta$ range of $|\eta| < 1.4$ in the barrel and $1.556 < |\eta|<2.4$ in the endcap. This is due to the requirement that the shower is completely contained within the calorimeter.\\ 
+
+\subsubsection{The Hadronic Calorimeter}
+
+Mesons and baryons are the main particles measured in the hadronic calorimeter \cite{cmstdrHCAL}. An additional aim is the estimation of missing energy, therefore the HCAL covers a wide region  ($|\eta| < 5 $). The HCAL is comprised of multiple parts as shown in Figure \ref{fig_det_cms_hcal}. The hadron barrel (HB) calorimeter covers covers the region $|\eta| < 1.4$, the two hadron endcap calorimeter until $|\eta| = 3$. The hadron forward (HF) calorimeter is not shown in Figure \ref{fig_det_cms_hcal} because it is located \SI{11.2}{\meter} along the beam axis covering the eta region $3 < |\eta|< 5$. The hadron outer (HO) calorimeter does not provide additional coverage, but is rather used to further contain the hadronic showers. \\
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width = 0.75\textwidth] {Bilder/CMS_HCAL}
+      
+  \caption{Sketch of the hadronic calorimeter. \cite{HCAL_Perf}}
+  \label{fig_det_cms_hcal}
+\end{figure}
+
+The HB and the HE use brass as absorber material interleaving it with plastic scintillator for the active dectection. The scintillation light is propagated to the central detector region with wavelength shifting fibers to be read out by hybrid photo diodes. \\
+The HB employs 2304 towers with a granularity of $\Delta \eta \times \Delta \phi = 0.087\; \times \; 0.087$ and a sampling length of 7.2 interaction lengths (including the ECAL). In the two HE wheels the granularity of the 18 modules is similar to the ECAL.\\
+The HF uses a cerenkov light based approach with quartz fibers as active material embedded into a copper absorber. This is due to the high rates and the high radiation in this region of the detector. HF is mainly used for the measurement of missing transverse ernergy and luminosity. \\
+The energy resolution when combining the two calorimeters was measured with a test beam of pions and is shown in Equation \ref{eq_det_cms_hcal} \cite{HCAL_Perf}.
+\begin{equation}
+\frac{\Delta E}{E} = \frac{\SI{0.7}{}}{\sqrt{E\; [\SI{}{\giga \electronvolt}]}} \oplus \frac{\SI{1}{}}{E\; [\SI{}{\giga \electronvolt}]} \oplus \SI{8}{\percent}
+\label{eq_det_cms_hcal}
+\end{equation}
+
+\section{The Solenoid}
+
+The soleonoid encloses the calorimeters with an inner radius of \SI{5.9}{\meter}, an outer radius of \SI{6.3}{\meter} and a length of \SI{12.9}{\meter}.\\
+It is superconducting being cooled by liquid helium and provides a magnetic field of $B = \SI{3.8}{\tesla}$ inside its value. Outside the iron return yoke the fieldstrength is $B = \SI{2}{\tesla}$. \\
+This magnetic field bents the trajectories of chharged particles allowing for the measurement of particle momenta up to the \SI{}{\tera \electronvolt} scale.
+
+\section{The Muon System}
+
+The muon system is embedded into the return coil of the solenoid and covers the full range of $|\eta|<2.4$ \cite{CMS_Muon}. As shown in Figure \ref{fig_det_cms_muon} three types of gaseous detectors are used. Drift tubes (DT) and resistive plate chambers (RPC) are built into the barrel region. In the endcaps cathode strip chambers (CSC) and RPC are employed. The RPC are mostly used for trigger information, whereas the other parts  are used to measure the position of the passing muon. \\
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width = 0.75\textwidth] {Bilder/CMS_Muonsys}
+      
+  \caption{Profile of the CMS muon system in the r-z plane. \cite{cmsTDR1}}
+  \label{fig_det_cms_muon}
+\end{figure}
+
+The design ensures the fullest possible coverage and allows to measure the muon as a vector. The resolution in $\phi$ is better than \SI{100}{\micro \meter} in position and better tha \SI{1}{\milli \radian} in direction.\\
+The resolution in \pt when combining information from the muon system and the tracker is shown in Equation \ref{eq_det_cms_muon} \cite{CMS_Muonperf}. The main source of uncertainty is the multi scattering of muons in the iron of the return yoke.
+
+\begin{equation}
+\frac{\Delta \pt}{\pt} = 0.045 \cdot \sqrt{\pt\; [\SI{}{\giga \electronvolt}]}
+\label{eq_det_cms_muon}
+\end{equation}
+
+The muon system is one of the most accentuated of CMS being partly responsible for the particularly good reconstruction of muons. Due to this good reconstruction muons are often used to identify certain classes of events. \\
+
+\section{Trigger and Data Acquisition}
+
+The structure of the data readout and online trigger system in CMS is shown in Figure \ref{fig_det_cms_tridas}. Since the full event rate of \SI{40}{\mega \hertz} can not be written to permanent storage, the event rate has to be reduced leading to the implementation of two trigger tiers and the reduction to a manageable rate of \SI{100}{\hertz}. \\
+The signal from the respective detectors are digitized and sent to the first trigger (Level 1 Trigger). To handle the data rate, the signals are also buffered on the front end electronics. As of 2012 the Level 1 Trigger only uses information from the ECAL, the HCAL and the muon system. The tracking system will be integrated into the Level 1 Trigger in the future \cite{CMS_Upgrade_2011}. The subsystem information is used to reconstruct first object candidates, like electrons or jets. Based on these candidates, a set of selections knnown as trigger paths are applied. Passing on of these selections leads to an event being written to the buffer for the next trigger step. \\
+The resulting data rate lies at \SI{100}{\kilo \hertz}. It is passed to the second trigger tier called High Level Trigger (HLT). This HLT then uses the complete data available from the detector to reconstruct object candidates more precisely than in the Level 1 Trigger. The reconstruction algorithms are close to the later offline reconstruction. \\
+The rate of events passing the HLT is approximately \SI{1}{\kilo \hertz} which are then permanently stored on the CMS computing grid \cite{CMS_HLT} \cite{CMS_Tridas_2}. 
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width = 0.75\textwidth] {Bilder/CMS_Tridas}
+      
+  \caption{The general structure of the Data Acquisition system in the CMS experiment. \cite{CMS_Tridas_2}}
+  \label{fig_det_cms_tridas}
 \end{figure}
