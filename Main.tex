@@ -15,6 +15,7 @@
 \usepackage{subfigure}
 %\usepackage{icomma} % kein Leerraum nach Komma als Dezimaltrennzeichen,kann Probleme mit dcolumn machen
 \usepackage{feynmf}
+\usepackage{lscape}
 \usepackage[separate-uncertainty,multi-part-units = single,per-mode = reciprocal]{siunitx}
 
 \bibliographystyle{plain}
@@ -48,8 +49,12 @@ citecolor=darkblue}
 \newcommand{\ttb}[0]{$t\overline{t}$}
 \newcommand{\hme}[0]{$^{-1}$}
 \newcommand{\ttgamma}[0]{\ensuremath{\mathrm{t}\overline{\mathrm{t}} \gamma} }
+\newcommand{\ttbar}[0]{\ensuremath{\mathrm{t}\overline{\mathrm{t}}} }
 \newcommand{\todo}[1]{\textbf{TODO: #1}}
 \newcommand{\pt}{\ensuremath{p_{\mathrm{T}}} }
+\newcommand{\PTm}{\ensuremath{{p}_\mathrm{T}\hspace{-1.02em}/}\xspace}
+\newcommand{\PTslash}{\ensuremath{{p}_\mathrm{T}\hspace{-1.02em}/}\xspace}
+\newcommand{\ETm}[0]{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss}}} }
 
 \setcounter{tocdepth}{2}
 \setlength{\parindent}{0in}
@@ -106,6 +111,7 @@ Aachen \\}
 \input{./Detector}
 \input{./Simulation}
 \input{./Anormalous}
+\input{./ttgamma}
 
 \bibliography{Masterarbeit}
 
