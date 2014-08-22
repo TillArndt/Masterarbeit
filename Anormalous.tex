@@ -1,6 +1,6 @@
 \chapter{Anomalous Couplings}
 
-In this chapter a benchmark study for anomalous couplings of the top quark is presented. A generator study is used to evaluate the sensitivity of a possible \ttgamma analysis for a non zero magnetic dipole moment of the top quark.
+In this chapter, a benchmark study for anomalous couplings of the top quark is presented. A generator study is used to evaluate the sensitivity of a possible \ttgamma analysis for a non zero magnetic dipole moment of the top quark.
 \section{The Top-Photon Vertex}
 
 As previously mentioned \todo{Link} the \ttgamma Lagrangian can be described as shown in  Equation \ref{eq_ano_ttg} \cite{AguilarSaavedra:2008zc}.
@@ -37,7 +37,7 @@ The generator WHIZARD is used to generate events for different top-quark magneti
 \end{equation}
 
 These events also include photons which are not radiated from the top quark making them less sensitive for anomalous couplings, but it is difficult to separate these processes.\\
-Only the output of the matrix element generator is compared here. The detector response or any other uncertainties are not included here.
+Only the output of the matrix element generator is taken into account. The detector response or any other uncertainties are not included here.
 There should be a clear difference between the different scenarios, otherwise a real analysis using measured data is not reasonable.\\
 The values chosen here for the multiple scenarios are shown in equation \ref{eq_ano_val}.
 
@@ -46,8 +46,8 @@ d_V^{\gamma} = 0.,\; 0.06,\; 0.12,\; 0.18,\; 0.30
 \label{eq_ano_val}
 \end{equation}
 
-The highest value of $d_V^{\gamma} = 0.30$ corresponds to a "radius" of $R_{\mathrm{t}} = \SI{0.65d-3}{\femto \meter}$. The numbers were basically chosen arbitrarily. One point of orientation for the choice where the limits on the magnetic dipole moment of the top quark \cite{Englert:2012by}, the other was the radius of the proton $R_{\mathrm{p}} \approx \SI{1}{\femto \meter}$. The proton radius should be significantly greater than the radius of the top quark. \\
-As a first point for investigation the calculated cross sections for the $\mathrm{pp} \to \ttgamma $ process can be compared (see Table \ref{tab_ano_crosssec}). No errors are given here, because of the technical complications when calculating these cross sections from the WHIZARD output (described in Section \ref{sec_simu_comp_2to7}). An error calculation is possible and would have to be included in an analysis, but for this benchmark study it is considered unnecessary.
+The highest value of $d_V^{\gamma} = 0.30$ corresponds to a "radius" of $R_{\mathrm{t}} = \SI{0.65d-3}{\femto \meter}$. One point of orientation for the choice where the limits on the magnetic dipole moment of the top quark \cite{Englert:2012by}, the other was the radius of the proton $R_{\mathrm{p}} \approx \SI{1}{\femto \meter}$. The proton radius should be significantly greater than the radius of the top quark. \\
+As a first point for investigation the calculated cross sections for the $\mathrm{pp} \to \ttgamma $ process can be compared (see Table \ref{tab_ano_crosssec}). No errors are given here because of the technical complications when calculating these cross sections from the WHIZARD output (described in Section \ref{sec_simu_comp_2to7}). An error calculation is possible and would have to be included in an analysis, but for this benchmark study it is considered unnecessary.
 
 \begin{table}[ht]
 \centering
@@ -71,10 +71,11 @@ As a first point for investigation the calculated cross sections for the $\mathr
      \label{tab_ano_crosssec}
 \end{table}
 
-The values for the cross section show little separation power, the first three being clearly within the uncertainty of the calculation. The difference in cross section between Standard Model ($d_V^{\gamma} = 0$)  and a scenario with $d_V^{\gamma} = 0.3$ is $\Delta \sigma_{\ttgamma} = \SI{35}{\femto \barn}$. Such a difference can as of now not be measured with the CMS detector  ($\sigma^{CMS}_{\ttgamma} = \SI{2.4 \pm 0.6}{\pico \barn}$\cite{CMS-PAS-TOP-13-011}).\\
+The values for the cross section show little separation power, the first three being clearly within the uncertainty of the calculation. The difference in cross section between Standard Model ($d_V^{\gamma} = 0$)  and a scenario with $d_V^{\gamma} = 0.3$ is $\Delta \sigma_{\ttgamma} = \SI{35}{\femto \barn}$. As of now, such a difference cannot be measured with the CMS detector  ($\sigma^{CMS}_{\ttgamma} = \SI{2.4 \pm 0.6}{\pico \barn}$\cite{CMS-PAS-TOP-13-011}).\\
 In the next step several kinematic observables are compared. They might offer more separation power than the comparison of the cross section.
 
 \begin{figure}
+\centering
   \subfigure[$\pt(\gamma)$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/photonEt_Anomalous}
   }
@@ -89,11 +90,12 @@ In the next step several kinematic observables are compared. They might offer mo
   \label{fig_ano_comp_1}
 \end{figure}
 
-The results are shown in Figure \ref{fig_ano_comp_1}. These comparisons show that the variables investigated here show no separation power.  The difference between the scenarios should be significant, in order to have even a chance at separating the two scenarios after the full detector simulation.\\
-A few more complicated observables are investigated in Figure \ref{fig_ano_comp_2}. In Figure \ref{fig_ano_comp_2_1} the transversal momentum of the top quark is shown in two bins. A similar observable is used in another study on anomalous top couplings \todo{cite Markus}. In Figure \ref{fig_ano_comp_2_2} the angle between the two top quarks is drawn. This observable is inspired by spin-correlation measurements \cite{CMS-PAS-TOP-12-004} \cite{Höhle:1349025}. In a real analysis they would have to be reconstructed, which is difficult or the observable would have to be changed to a angular correlation of the decay products.\\
-Even with these observables the separation power does not increase significantly. For the phase space tested here, the data we have in the moment is insufficient for a measurement.   
+The results are shown in Figure \ref{fig_ano_comp_1}. These comparisons show that the variables investigated here show no separation power.  The difference between the scenarios should be significant in order to at least have a chance of separating the two scenarios after the full detector simulation.\\
+A few more complicated observables are investigated in Figure \ref{fig_ano_comp_2}. In Figure \ref{fig_ano_comp_2_1} the transversal momentum of the top quark is shown in two bins. A similar observable is used in another study on anomalous top couplings \todo{cite Markus}. In Figure \ref{fig_ano_comp_2_2} the angle between the two top quarks is drawn. This observable is inspired by spin-correlation measurements \cite{CMS-PAS-TOP-12-004} \cite{Höhle:1349025}. In a real analysis they would have to be reconstructed, which is difficult, or the observable would have to be changed to a angular correlation of the decay products.\\
+Even with these observables the separation power does not increase significantly. For the phase space tested here, the data we currently have is insufficient for a measurement.   
 
 \begin{figure}
+\centering
   \subfigure[$\pt(\gamma)$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/Rebin_Anomalous}
     \label{fig_ano_comp_2_1}
@@ -107,7 +109,7 @@ Even with these observables the separation power does not increase significantly
   \label{fig_ano_comp_2}
 \end{figure}
 
-To assess the impact of a very strong anomalous magnetic coupling a few extreme scenarios were generated. The values for the electromagnetic coupling are shown in Equation \ref{eq_ano_val_ex}. They are unrealistic as such a high anomalous coupling would have probably been detected already.
+To assess the impact of a very strong anomalous magnetic coupling, a few extreme scenarios were generated. The values for the electromagnetic coupling are shown in Equation \ref{eq_ano_val_ex}. They are unrealistic as such a high anomalous coupling would probably have been detected already.
 
 \begin{equation}
 d_V^{\gamma} = 0.,\; 0.30,\; 1.0,\;1.5,\; 5.0
@@ -118,7 +120,7 @@ Again, the cross sections are investigated (see Table \ref{tab_ano_crosssec_ex})
 
 \begin{table}[ht]
 \centering
-    \caption{Cross sections for the $\mathrm{pp} \to \ttgamma$ process as calculated by WHIZARD. Multiple scenarios for a possible a very high anomalous magnetic dipole moment are compared. No errors are given. These are used to assess the general impact of a high anomalous coupling.}
+    \caption{Cross sections for the $\mathrm{pp} \to \ttgamma$ process as calculated by WHIZARD. Multiple scenarios for a possible very high anomalous magnetic dipole moment are compared. No errors are given. These are used to assess the general impact of a high anomalous coupling.}
     \begin{tabular}{| l | l |}
 
     \hline
@@ -141,6 +143,7 @@ Again, the cross sections are investigated (see Table \ref{tab_ano_crosssec_ex})
 Different kinematic observables are also studied (see Figure \ref{fig_ano_comp_ex}). The different scenarios are separable, especially the one with $d_{V}^{\gamma} = 5.0$ shows distinctive behavior. A limit calculation would be possible using either more different simulated scenarios and interpolation or  matrix element reweighing to achieve a continuous distribution. These methods would require a lot of effort and are not further pursued in this analysis.
 
 \begin{figure}
+\centering
   \subfigure[$\pt(\gamma)$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/photonEt_Anomalous_extreme}
   }
@@ -157,4 +160,4 @@ Different kinematic observables are also studied (see Figure \ref{fig_ano_comp_e
 
 \section{Conclusion}
 
-The benchmark study shows that the $\mathrm{pp} \to \ttgamma$ channel is in the moment not suited well for a high precision measurement of a possible magnetic moment of the top quark. While the investigation of a hypothetical very high coupling shows that a limit could be set using either the event kinematics or a more precisely calculated cross section, this would require lot of time and effort. The result would likely be unsatisfactory, so a further investigation seems not sensible in the moment. In all likelihood it will remain challenging even after the next LHC run has delivered its results. 
+The benchmark study shows that the $\mathrm{pp} \to \ttgamma$ channel is currently not well suited for a high precision measurement of a possible magnetic moment of the top quark. While the investigation of a hypothetical very high coupling shows that a limit could be set using either the event kinematics or a more precisely calculated cross section, this would require plenty of time and effort. The result would likely be unsatisfactory, so a further investigation  currently does ot feel sensible. In all likelihood it will remain challenging even after the next LHC run has delivered its results. 

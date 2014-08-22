@@ -1,13 +1,21 @@
 \chapter{A new Template Fit for the \ttgamma cross section measurement}
 
-In this section the measurement of the \ttgamma cross section is discussed. It is heavily based on the analysis presented in \cite{CMS-PAS-TOP-13-011} and \cite{tholen:ma} extending certain aspects. The major change is the use of different a different template in the template fit determining the final cross section. Nevertheless, the whole analysis is described here as it is necessary to understand the specific changes that were made.\\
-As described in Section \todo{Link} a new factorized $2 \to 7$ has been developed for this measurement. However, the full simulation was not ready in time to be included here. As the full simulation has been performed by the CMS collaboration, the timescale is beyond the authors control \todo{First person ?}. Consequently, the $2 \to 5$ approach from \cite{CMS-PAS-TOP-13-011} described in Section \todo{Link} is used for the \ttgamma cross section measurement. 
+In this section the measurement of the \ttgamma cross section is discussed. It is heavily based on the analysis presented in \cite{CMS-PAS-TOP-13-011} and \cite{tholen:ma} and takes a closer look at certain aspects. The major change is the use of a different template in the template fit determining the final cross section. Nevertheless, the whole analysis is described here as it is necessary to understand the specific changes that were made.\\
+As described in Section \todo{Link} a new factorized $2 \to 7$ has been developed for this measurement. However, the full simulation was not ready in time to be included here. As the full simulation has been performed by the CMS collaboration, the timescale is beyond the author's control \todo{First person ?}. Consequently, the $2 \to 5$ approach from \cite{CMS-PAS-TOP-13-011} described in Section \todo{Link} is used for the \ttgamma cross section measurement. 
 
 \section{Analysis Strategy}
 \subsection{Signal Process}
 \label{sec_ttg_strat_sig}
 
-Figure \todo{Link,Feynman diagram} shows a Feynman diagram for the signal process investigated in this analysis. The \ttgamma decay process consists of a top-quark pair where one of the top quarks radiates a photon. In this analysis semi muonic events are inspected, so the signature can be described as follows:
+\begin{figure}
+\centering
+    \includegraphics[width = 0.67\textwidth] {Bilder/feyn_ttgamma}
+  \caption{Feynman graph of a \ttgamma event decaying into a muon and jets \cite{Hermanns:1292768}.}
+  \label{fig_ttg_sig_fey}
+\end{figure}
+
+
+Figure \ref{fig_ttg_sig_fey} shows a Feynman diagram for the signal process investigated in this analysis. The \ttgamma decay process consists of a top-quark pair where one of the top quarks radiates a photon. In this analysis semi muonic events are inspected, so the signature can be described as follows:
 \begin{itemize}
 \item One high energetic muon
 \item Four jets, two of which originate from a b quark
@@ -21,23 +29,79 @@ The background processes can be divided into two parts. On the one hand there ar
 
 \subsubsection{Top Pair like Background}
 
-In order to have a top pair like signature events should mainly have one muon, missing transverse energy and four high energetic jets. The most important are shown in Figure \todo{Feynman graphs,links} and discussed below.
+In order to have a top pair like signature events should mainly have one muon, missing transverse energy and four high energetic jets. The most important are shown in Figure \ref{fig_ttg_bkg} and discussed below.
 
 \begin{itemize}
-\item \todo{Links}
-\item \textbf{W + Jets}: The signature consists of a muon and missing transverse energy from the W-boson decay, additionally there can be additionally produced jets. The more b jets are required the more the cross section is reduced. The jets typically have a lower energy than the ones originating from top-quark pair events.
-\item \textbf{Drell Yan + Jets}: A photon or a Z boson decays into two muons and additional jets are produced. One of the muons must be very low energetic or misidentified, otherwise the muon veto \todo{ Link ?} would reject the event. Missing transverse energy can be caused by particles not being detected or by mis measured momenta. Tight requirements on the jets again reduce the cross section of this process.
-\item \textbf{Single Top}: Single top-quark production can happen either in the s-, the t-channel or associated with a W boson. Even though the cross sections are low \todo{Cite ?} the very signal like structure allows for a significant contribution to the signal region.
-\item \textbf{QCD Multijet}: This background is always a concern when dealing with a hadron collider because of its very large cross section. It is unlikely that a jet could be reconstructed as a muon making the process less relevant for the signal region.
+\item \textbf{W + Jets}: The signature consists of a muon and missing transverse energy from the W-boson decay, additional jets can be produced through QCD radiation (see Figure\ref{fig_ttg_bkg_wjets}). The more b jets are required the more the cross section is reduced. The jets typically have a lower energy than the ones originating from top-quark pair events.
+\item \textbf{Drell Yan + Jets}: A photon or a Z boson decays into two muons and additional jets are produced (see Figure \ref{fig_ttg_bkg_dy}). One of the muons must be very low energetic or misidentified, otherwise the muon veto \todo{ Link ?} would reject the event. Missing transverse energy can be caused by particles not being detected or by mis-measured momenta. Tight requirements on the jets again reduce the cross section of this process.
+\item \textbf{Single Top}: Single top-quark production can happen either in the s-channel, the t-channel or associated with a W boson (see Figure \ref{fig_ttg_bkg_singlet} for the s-channel). Even though the cross sections are low \todo{Cite ?} the very signal like structure allows for a significant contribution to the signal region.
+\item \textbf{QCD Multijet}: This background is always a concern when dealing with a hadron collider because of its very large cross section. It is unlikely that a jet could be reconstructed as a muon making the process less relevant for the signal region (see Figure \ref{fig_ttg_bkg_qcd}).
 \item \textbf{Other top-quark pair decays}: Other decay channels for top-quark pairs can also contribute in the signal region, due to their similar structure. Especially events where a tau lepton decays into a muon contribute. 
 \end{itemize}
+
+\begin{figure}[ht]
+  \subfigure[W + Jets]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/feyn_wjets}
+    \label{fig_ttg_bkg_wjets}
+  }
+    \subfigure[Drell-Yan + Jets]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/feyn_dy}
+        \label{fig_ttg_bkg_dy}
+ }
+ \\
+   \subfigure[Single Top (s-channel)]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/feyn_singlet}
+        \label{fig_ttg_bkg_singlet}
+  }
+    \subfigure[QCD]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/feyn_qcd}
+        \label{fig_ttg_bkg_qcd}
+ }
+  \caption{Example Feynman graphs for the \ttbar like background events. Additional jets are generated through quark or gluon radiation.\cite{steeger}}
+  \label{fig_ttg_bkg}
+\end{figure}
 
 \subsubsection{Photon Signature Background}
 
 \todo{Feynman Graphs + cite + links in text}
 
-There are two different types of photon backgrounds. The first are different particles that are mis reconstructed as photons. They might really be neutral hadrons, electrons, photons from a $\pi^0$ (these are of course actual photons, but they are not considered to be final state photons) or other particles. These mis reconstructed particles are called fake photons throughout the analysis and they play a major role in the cross section measurement. \\
+There are two different types of photon backgrounds. The first are different particles that are mis-reconstructed as photons. They might really be neutral hadrons, electrons, photons from a $\pi^0$ (these are of course actual photons, but they are not considered to be final state photons) or other particles. These mis-reconstructed particles are called fake photons throughout the analysis and they play a major role in the cross section measurement. \\
 The second type of background are real photons that are radiated not from the top quark but either from initial state or different final state particles as shown in Figures \todo{Link}. Depending on the simulation strategy (see Section \todo{Link}) some of these events might actually belong to the signal region. For this measurement the $2 \to 5$ strategy is used for the signal simulation, so only top quarks radiated from the light quarks or the muon (see Figures \todo{Link}) are considered to contribute to the background region. Nevertheless, there are cuts in the selection (see Section \todo{Link}) to mitigate the influence of the modeling of initial and final state radiation.
+
+\begin{figure}[ht]
+  \subfigure[Quark Annihilation]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/feyn_ttgamma_isrqq}
+    \label{fig_ttg_bkg_isrqq}
+  }
+    \subfigure[Gluon Fusion]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/feyn_ttgamma_isrgg}
+        \label{fig_ttg_bkg_isrgg}
+ }
+  \caption{Background through additional photon radiation in \ttbar events. Here the photons are radiated from the initial state particles. Only quarks (a) in the initial state can radiate photons. \cite{Hermanns:1292768}}
+  \label{fig_ttg_bkg_isr}
+\end{figure}
+
+\begin{figure}[ht]
+  \subfigure[]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/fey_ttgamma_fsrb}
+    \label{fig_ttg_bkg_fsrb}
+  }
+    \subfigure[]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/feyn_ttgamma_fsrw}
+        \label{fig_ttg_bkg_fsrw}
+ }
+ \\
+   \subfigure[]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/fey_ttgamma_fsrf1}
+        \label{fig_ttg_bkg_fsrf1}
+  }
+    \subfigure[]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/fey_ttgamma_fsrf2}
+        \label{fig_ttg_bkg_fsrf2}
+ }
+  \caption{Background through additional photon radiation in \ttbar events. Here the photon is radiated from one of the charged final state or intermediary particles. \cite{tholen:ma} \cite{Hermanns:1292768}}
+  \label{fig_ttg_bkg_fsr}
+\end{figure}
 
 \subsection{Outline of the \ttgamma Cross Section Measurement}
 
@@ -48,6 +112,7 @@ Here a brief description of the analysis is given.\\
 \item A preselection of semi muonic top-quark pair events using the CMS reference selection \todo{Link}. Later the number of preselected events in data $N^{presel}$ and the purity of the selection calculated from simulated events $\pi_{\mathrm{t}\overline{\mathrm{t}}}$ are used.
 \item Selection of events with a prompt photon \todo{Link}. The selection efficiency $\epsilon_{\gamma}$ is computed from simulation.
 \item A template Fit to extract the number of real photons in the final candidates. Templates for real and fake photons are taken from data and fitted to a shower shape distribution (see Section \todo{Link}). The result of the fit is the number off selected \ttgamma events in data $N^{sig}_{\ttgamma}$.
+\item The validity of the fit procedure is analysed with a closure test (see Section \ref{sec_ttg_clo}). Pseudo data is generated from simulated samples and then used for the template fit. The fit results should reproduce the input for the pseudo data generation.
 \item The ratio between the \ttgamma and the $\mathrm{t}\overline{\mathrm{t}}$ cross section is calculated (see Equation ).
 
 \begin{equation}
@@ -72,7 +137,7 @@ The preselection is based on CMS recommendations for a cut based top-quark pair 
 \item \textbf{Tight Muon}: The events must have exactly one high energetic, isolated muon. The muons are required to have  $\pt > \SI{26}{\giga \electronvolt}$ to reach the plateau of the trigger efficiency and the pseudo rapidity $| \eta | <2.1 $. They are required to be global muons meaning they have to be reconstructed in the tracker as well as in the muon system. The relative isolation should be $I_{rel}(0.4) < 0.12$. Here, $I_{rel}$ is defined as the sum of the \pt of all neutral and charged particle candidates in a cone of $\Delta R < 0.4$ around the muon. The momentum connected to the muon is excluded and the isolation is corrected for pile up. The distance form the primary vertex is required to be $\Delta z < \SI{5}{\milli \meter}$ and $\Delta \rho < \SI{0.2}{\milli \meter}$. The combined efficiency of the muon trigger and selection is estimated to be $\SI{76}{\percent}-\SI{94}{\percent}$ contingent on the $\eta$ and \pt of the muon \cite{CMS-DP-2013-009} \cite{Chatrchyan:2012xi}.
 \item \textbf{Primary Vertex}: All events should have at least one good primary vertex. The distance to the beam interaction region should be $\Delta z < \SI{24}{\centi \meter}$ and $\Delta \rho < \SI{2}{\centi \meter}$. If there are multiple vertices the one with the highest $\pt^2$ of all associated tracks is chosen as primary vertex. All leptons are required to originate from the primary vertex.
 \item \textbf{Jets}: The events should have at least for jets with $| \eta | < 2.5$. The transverse momenta of the four leading jets should be larger then $\pt > 55,\; 45,\; 35, \; \SI{20}{\giga \electronvolt}$ respectively. 
-\item \textbf{b-tag}: At least one of the four leading jets must be be b tagged (see Section \todo{Link}). The combined secondary vertex algorithm with a value of CVSM$> 0.679$ is used. This leads to a efficiency of approximately \SI{70}{\percent} and a misidentification rate of approximately \SI{1.5}{\percent} \cite{CMS-PAS-TOP-12-027} \cite{Chatrchyan:2012jua}.
+\item \textbf{b-tag}: At least one of the four leading jets must be b tagged (see Section \todo{Link}). The combined secondary vertex algorithm with a value of CVSM$> 0.679$ is used. This leads to an efficiency of approximately \SI{70}{\percent} and a misidentification rate of approximately \SI{1.5}{\percent} \cite{CMS-PAS-TOP-12-027} \cite{Chatrchyan:2012jua}.
 \item \textbf{Electron Veto}: Events with an electron candidate with $\mathrm{E}_{\mathrm{T}} > \SI{20}{\giga \electronvolt}$, $| \eta |< 2.5$ and $I_{rel}(0.3)< 0.15$ are rejected.
 \item \textbf{Loose Muon Veto}: All Events with an additional global muon with $\pt > \SI{10}{\giga \electronvolt}$, $|\eta < 2.5|$ and $I_{rel}(0.4)<0.20$ are rejected. 
 \end{itemize}
@@ -82,10 +147,10 @@ Single top quark and W + jets events are the main background contributions. The 
 
 \section{Photon Selection}
 
-The photon candidates are reconstructed from significant energy deposits in the ECAL superclusters. Several isolation and kinematic variables are used for the cut based selection, details of which are found below. Influence of the underlying event and pile up on the isolation criteria are is treated with the so called $\rho$ correction \cite{CMS-PAS-PFT-09-001}. The selection is based on the tight cut based photon identification used in \cite{CMS-PAS-HIG-13-006}. in order to pass the selection cuts the events are required to have at least one photon that passes fulfills the conditions.
+The photon candidates are reconstructed from significant energy deposits in the ECAL superclusters. Several isolation and kinematic variables are used for the cut based selection, details of which are found below. Influence of the underlying event and pile up on the isolation criteria are treated with the so called $\rho$ correction \cite{CMS-PAS-PFT-09-001}. The selection is based on the tight cut based photon identification used in \cite{CMS-PAS-HIG-13-006}. In order to pass the selection cuts the events are required to have at least one photon that fulfills the conditions.
 
 \begin{itemize}
-\item \textbf{Fiducialization}: The photon candidate is required to have a transverse energy $E_{\mathrm{T}} > \SI{25}{\giga \electronvolt}$ in order so suppress low energy fakes and photons not originating from the primary vertex. There is a further cut of $| \eta | < 1.4442$ to restrict the photons to the barrel region of the ECAL. The photon identification in the endcaps is not reliable due to the large material budget in front t of it \cite{tholen:ma}.
+\item \textbf{Fiducialization}: The photon candidate is required to have a transverse energy $E_{\mathrm{T}} > \SI{25}{\giga \electronvolt}$ in order so suppress low energy fakes and photons not originating from the primary vertex. There is a further cut of $| \eta | < 1.4442$ to restrict the photons to the barrel region of the ECAL. The photon identification in the endcaps is not reliable due to the large material budget in front of it \cite{tholen:ma}.
 \item \textbf{Electron veto}: The photon candidate is required to not have a track seed in the pixel detector. Due to the electron photon disambiguation employed in the particle reconstruction all photon candidates pass this cut.
 \item \textbf{Tower-based H/E}: The ratio between the energy deposited in the HCAL towers behind the respective ECAL towers should be less than \SI{5}{\percent}
 \item \textbf{Shower width $\sigma_{i \eta i \eta}$}: The definition of the shower shape variable $sigma_{i \eta i \eta}$ is shown in Equation \ref{eq_ttg_sel_sie}. The Condition is $\sigma_{i \eta i \eta} < 0.011$.
@@ -172,13 +237,13 @@ As seen in Table \ref{tab_ttg_sel_evt} there is a good agreement between data an
 
 \section{Analyzing the Real Photon Content}
 
-As mentioned in Section \todo{Link} the cut based identification is does not sufficiently reduce the number of non photon particles identified as a photon. Therefore a template fit is applied in to determine the number of events with an actual photons. The focus of the analysis lies in this part of the measurement introducing a new template to have a completely data-driven template fit.\\
-For the fit templates for real and fake photons are taken from data and then fitted to the distribution for charged hadron isolation. The template for fake photons is taken from a data sideband, whereas the template for real photons is taken obtained by using the so called random cone isolation.\\
+As mentioned in Section \todo{Link} the cut based identification does not sufficiently reduce the number of non photon particles identified as a photon. Therefore a template fit is applied in order to determine the number of events with actual photons. The focus of the analysis lies in this part of the measurement introducing a new template to have a completely data-driven template fit.\\
+For the fit, templates for real and fake photons are taken from data and then fitted to the distribution for charged hadron isolation. The template for fake photons is taken from a data sideband, whereas the template for real photons is obtained by using the so called random cone isolation.\\
 The purity of the \ttgamma events is calculated from simulation.\\
 
 \subsection{Photon Matching}
-
-During this chapter the two classes of real and fake photons are mentioned often, they are explained here shortly. For simulated events it is possible to assign reconstructed photons to generated photons or other generated particles making sure whether a reconstructed photon is a real photon. Photons that are matched to a generated photon that is not part of a jet meaning it does not have a hadronic origin are classified as real photons. Photons that are not matched according to the above criteria are classified as fake photons.\\
+d
+Because the two classes of real and fake photons are mentioned often in this chapter, they are shortly explained here. For simulated events it is possible to assign reconstructed photons to generated photons or other generated particles to make sure whether a reconstructed photon is a real photon. Photons that are matched to a generated photon that is not part of a jet, which means it does not have a hadronic origin are classified as real photons. Photons that are not matched according to the above criteria are classified as fake photons.\\
 The details of the matching procedure are as follows: The generated and reconstructed photons have to be within a cone of $\Delta R < 0.2$ to each other. The energy difference must be $\Delta E / E < \SI{100}{\percent}$. Should more than one photon be matched then the one with the smallest $\Delta R$ is taken.  \todo{Plot on performance ?}
 
 \subsection{The Template Fit}
@@ -188,10 +253,11 @@ In this section the template fit is discussed. First the observable that is used
 \subsubsection{The Discriminating Observable: Charged Hadron Isolation}
 
 The charged hadron isolation is similar to the other particle based isolations described in Section \todo{Link}. It is the sum of the \pt of all charged particle candidates in a cone of $\Delta R = 0.4$ around the photon. It should therefore be a good discriminator against jets misidentified as photons, which should make up a large number of the faked photons, because the investigated \ttgamma events are required to have a large amount of jets.\\  
-Figure \ref{fig_ttg_fit_chhadnm1} shows the distribution after the charged hadron isolation after the selection cuts. The agreement between data and simulation is acceptable. There is a significant disagreement between data and simulation in the first bin that should be signal dominated. This is one of the reasons why a fully data driven fit should yield a more reliable result.\\
+Figure \ref{fig_ttg_fit_chhadnm1} shows the distribution of the charged hadron isolation after the selection cuts. The agreement between data and simulation is acceptable. There is a significant disagreement between data and simulation in the first bin that should be signal dominated. This is one of the reasons why a fully data driven fit should yield a more reliable result.\\
 For the template fit only the photon with the highest transverse energy is considered for each event. Additionally, particles pointing to the supercluster of the photon are removed from the calculation of the isolation. This so called supercluster footprint removal is used to minimize the correlation between the charged hadron isolation and the shower shape observable $\sigma_{i \eta i \eta}$ \cite{CMS-PAS-HIG-13-006}.\\
 
 \begin{figure}
+\centering
     \includegraphics[width = 0.67\textwidth] {Bilder/Nm1_ChHadIso}
   \caption{Logarithmic plot of the charged hadron isolation after the selection. The simulated samples are normalized to data luminosity.}
   \label{fig_ttg_fit_chhadnm1}
@@ -211,6 +277,7 @@ An alternative sideband distribution is later used for comparison. It only has t
 The two sideband distributions are compared with the photon fake distribution from the simulated \ttbar sample (the sideband distributions are also taken from the same sample) in Figure \ref{fig_ttg_fit_faketemplcomp}. The distributions are rebinned for the fitting in order to mitigate the impact of low statistics for higher values. There are differences between the fake and the sideband distributions, which could be due to the modeling in the simulation. In the previous version of this analysis \cite{CMS-PAS-TOP-13-011} the sideband distributions from simulation where weighted bin by bin to look like the fake distributions. These weights were then propagated to the data distribution and their impact treated as a systematic uncertainty. This reweighing is not applied here. The impact on the template fit will be discussed later \todo{Link}.
 
 \begin{figure}
+\centering
     \includegraphics[width = 0.67\textwidth] {Bilder/FakeTemplComp}
   \caption{Comparison of the fake and sideband distributions for charged hadron distribution from the simulated \ttbar sample. The distributions are normalized to unity.}
   \label{fig_ttg_fit_faketemplcomp}
@@ -233,7 +300,7 @@ In order to get a data driven signal template a technique called random cone iso
     \subfigure[]{
     \includegraphics[width = 0.55\textwidth] {Bilder/RandomConeIso}
   }
-  \caption{Sketch to explain the random cone technique. If the red are represents the footprint of the photon in picture a) and is then completely removed in picture b), the green are representing the isolation should be the same for both picture a) and b). Consequently, the random cone isolation predicts the original isolation. \cite{RandCone_Talk} \cite{RandCone_AN}}
+  \caption{Sketch to explain the random cone technique. If the red circle represents the footprint of the photon in picture a) and is then completely removed in picture b), the green circles representing the isolation should be the same for both picture a) and b). Consequently, the random cone isolation predicts the original isolation. \cite{RandCone_Talk} \cite{RandCone_AN}}
   \label{fig_ttg_fit_raco}
 \end{figure}
 
@@ -279,9 +346,10 @@ The purity and the corrected result are shown in Equation \ref{eq_ttg_fit_rescor
 \label{eq_ttg_fit_rescor}
 \end{equation}
 
-The remaining question is the validity of the fit procedure taking into account the discrepancies between the templates used in the fit and the templates using the matched real and fake photons from simulation (as described in Sections \ref{sec_ttg_fit_bkg} and \ref{sec_ttg_fit_sig}). To test the validity closure tests are used. The results are described in the following (see Section \todo{Link}).
+The remaining question is the validity of the fit procedure. The discrepancies between the templates used in the fit and the templates using the matched real and fake photons from simulation (as described in Sections \ref{sec_ttg_fit_bkg} and \ref{sec_ttg_fit_sig}) should be investigated. To test the validity closure tests are used. The results are described in the following (see Section \todo{Link}).
 
 \begin{figure}[ht]
+\centering
   \subfigure[]{
     \includegraphics[width = 0.67\textwidth] {Bilder/TemplateFit_Templates}
   }
@@ -296,7 +364,7 @@ The remaining question is the validity of the fit procedure taking into account 
 \subsection{Assessing the Template Fit: Closure Tests}
 \label{sec_ttg_clo}
 
-The purpose of the closure test is to validate a certain fit method by using pseudo experiments. Pseudo data is produced with set of known parameters and the fit should be able to reproduce these parameters. The more detailed description of the specifics used in this analysis follows:
+The purpose of the closure test is to validate a certain fit method by using pseudo experiments. Pseudo data is produced with a set of known parameters and the fit should be able to reproduce these parameters. In detail, specifics used in this analysis are as follows:
 
 \begin{itemize}
 \item The pseudo data is obtained from two different sets of samples. One set consists of the simulated \ttgamma sample and the \ttbar background sample. The other consists of \ttgamma + jets and a \ttbar + jets sample that also include out of time pile up (explained in Section \todo{Link}).
@@ -306,15 +374,19 @@ The purpose of the closure test is to validate a certain fit method by using pse
 \end{itemize}
 
 \subsubsection{The First Closure Test}
+\label{sec_ttg_clo_norm}
 
-This closure test is performed using the \ttgamma and \ttbar samples without out of time pile up. An example result is shown in Figure \ref{fig_ttg_clo_ex1}. There are significant differences between the pseudo data and the result of the fit. Another problem is the huge error on the background result. A reason might be that there are generally more events in the templates taken from simulation compared to the templates taken from data. Therefore the statistical error on the templates used for fitting in this closure test is lower than the statistical error in the templates used in the templates from data. Still, the result approximately reproduces the factors used for fitting.\\
-The comprehensive results for the whole closure test are shown in Figure \todo{Figure Link}.\\
+This closure test is performed using the \ttgamma and \ttbar samples without out of time pile up. An example result is shown in Figure \ref{fig_ttg_clo_ex1}. There are significant differences between the pseudo data and the result of the fit. Another problem is the huge error on the result for the number of fake photons. A reason might be that there are generally more events in the templates taken from simulation compared to the templates taken from data. Therefore the statistical error on the templates used for fitting in this closure test is lower than the statistical error in the templates used in the templates from data. Still, the result approximately reproduces the factors used for fitting.\\
+The comprehensive results for the whole closure test are shown in Figure \ref{fig_ttg_clo_seqnorm}.\\
+The huge errors on the number of fake photons is again visible, but it seems to be less pronounced in the second sequence where the number of fake photons is varied (see Figures \ref{fig_ttg_clo_seqnorm21} and \ref{fig_ttg_clo_seqnorm22}). This might be due to a technical problem due to the normalization of the templates used for the fit. This needs to be further investigated, but this is not possible here due to time constraints.\\
+The results of the whole closure test mostly reproduce the input parameters at least within two times the statistical uncertainty. There is however a systematic structure in the results of the closure test. The reason might be an insufficient separation between signal and background templates. This will be further investigated in Section \todo{Link}.  
 
 \begin{figure}[ht]
+\centering
 
     \includegraphics[width = 0.67\textwidth] {Bilder/ClosureTest_norm_ex}
     
-  \caption{An example for the result of the closure Test. The "mix" entry in the legend shows the factors used for the mixing of the pseudo data. The first number is the factor for fake photons, the second for real photons. }
+  \caption{An example for the result of the closure Test without out of time pile up. The "mix" entry in the legend shows the factors used for the mixing of the pseudo data. The first number is the factor for fake photons, the second for real photons. }
   \label{fig_ttg_clo_ex1}
 \end{figure}
 
@@ -327,10 +399,237 @@ The comprehensive results for the whole closure test are shown in Figure \todo{F
  }
    \subfigure[Fake photons]{
     \includegraphics[width = 0.52\textwidth] {Bilder/ClosureTest_norm_seq21}
+    \label{fig_ttg_clo_seqnorm21}
   }
     \subfigure[Real photons]{
     \includegraphics[width = 0.52\textwidth] {Bilder/ClosureTest_norm_seq22}
+    \label{fig_ttg_clo_seqnorm22}
  }
-  \caption{\todo{captions}}
+  \caption{The results of the closure test for real and fake photons without out of time pile up. In the sequence shown in a) and b) the number of real photons is varied, in sequence c) and d) the number of fake photons is varied.}
   \label{fig_ttg_clo_seqnorm}
 \end{figure}
+
+\subsubsection{The Second Closure Test}
+\label{sec_ttg_clo_oot}
+
+This closure test is performed using the \ttgamma + jets and the \ttbar +jets samples with out of time pile up. An example result is shown in Figure \ref{fig_ttg_clo_ex2}. In contrast to the first closure test (see Section \ref{sec_ttg_clo_norm}) the fitted templates and the pseudo data agree with each other within their uncertainties. The huge error on the number of fake photons persist, which is a hint that it may be due to the normalization or the statistical errors on the fitted templates. Since the huge errors occur for both template fits, which are independent of each other, but technically done in the same way, the reason seems to lie in the technical implementation. \\
+The factors used for the mixing of the pseudo data are not reproduced by the fit results. While the number of fake photons is reproduced within the uncertainty, this is not meaningful, because of the huge uncertainties. The number of real photons seems to be significantly under fitted. \\
+This underfitting of the number of real photons becomes more apparent when looking at the whole closure test shown in Figure \ref{fig_ttg_clo_seqoot}. The number of real photons is consistently underfitted for both sequences. \\
+The systematic structure visible in the closure test without out of time pile up(see Figure \ref{fig_ttg_clo_seqnorm}) is less pronounced 
+in the closure test with out of time pile up. It should be due to a better separation between real and fake photons. Another reason could be the better agreement between the fitted templates and the pseudo data leading to a more stable fit result. This is further discussed in Section \todo{Link}.\\
+
+\begin{figure}[ht]
+\centering
+
+    \includegraphics[width = 0.67\textwidth] {Bilder/ClosureTest_oot_ex}
+    
+  \caption{An example for the result of the closure Test with out of time pile up. The "mix" entry in the legend shows the factors used for the mixing of the pseudo data. The first number is the factor for fake photons, the second for real photons. }
+  \label{fig_ttg_clo_ex2}
+\end{figure}
+
+\begin{figure}[ht]
+  \subfigure[Fake photons]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/ClosureTest_oot_seq11}
+  }
+    \subfigure[Real photons]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/ClosureTest_oot_seq12}
+ }
+   \subfigure[Fake photons]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/ClosureTest_oot_seq21}
+    \label{fig_ttg_clo_seqoot21}
+  }
+    \subfigure[Real photons]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/ClosureTest_oot_seq22}
+    \label{fig_ttg_clo_seqoot22}
+ }
+  \caption{The results of the closure test for real and fake photons without out of time pile up. In the sequence shown in a) and b) the number of real photons is varied, in sequence c) and d) the number of fake photons is varied.}
+  \label{fig_ttg_clo_seqoot}
+\end{figure}
+
+\subsubsection{Further Tests}
+\todo{New Section Name}
+
+In order to further investigate the validity of the fit more tests are perormed.\\
+As a sanity check the closure test is repeated, but this time the templates used for the generation of the pseudo data are also used for the template fit. The result should exactly reproduce the input, as the templates are fitted to themselves.\\
+The results are shown in Figure \ref{fig_ttg_clo_toy}. The fit results exactly reproduce the input, while the errors on the number of fake photons is still huge. This shows that the fit technically works on a basic level.\\
+
+\begin{figure}[ht]
+  \subfigure[without OOT pile up]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/ClosureTest_toy_ex2}
+  }
+    \subfigure[with OOT pile up]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/ClosureTest_toy_ex1}
+ }
+   \subfigure[without OOT pile up]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/ClosureTest_toy_seq2}
+    \label{fig_ttg_clo_toy_seq2}
+  }
+    \subfigure[with OOT pile up]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/ClosureTest_toy_seq1}
+    \label{fig_ttg_clo_toy_seq1}
+ }
+  \caption{a) and b) show examples for the fit with and without out of time pile up. c) and d) show the results for the overall closure test with and without out of time pile up.}
+  \label{fig_ttg_clo_toy}
+\end{figure}
+
+As a further test the template for fake photons used for the fit is changed to the alternative template described in Section \todo{Link}. Their is little change in the results of the template fit, as can be seen on Figure \ref{fig_ttg_clo_chte}. The systematic effect for the samples without out of time pile up is still significant (see Figure \ref{fig_ttg_clo_chte1}). This shows that the separation between the templates for real and fake photons is likely not the cause for this effect, as the alternative fake template should provide a different degree of separation.\\
+
+\begin{figure}[ht]
+   \subfigure[without OOT pile up]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/ClosureTest_norm_ChTe}
+    \label{fig_ttg_clo_chte1}
+  }
+    \subfigure[with OOT pile up]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/ClosureTest_norm_ChTe2}
+ }
+  \caption{Results of the closure test with an alternative template used to fit the amount of fake photons.}
+  \label{fig_ttg_clo_chte}
+\end{figure}
+
+For the next test the templates used for the fit and the pseudo data generation were interchanged: The \ttgamma + jets sample with out of time pile up was used with the \ttbar sample (see Figures \ref{fig_ttg_clo_test_11} and \ref{fig_ttg_clo_test_12}) and the \ttgamma sample was used with the \ttbar + jets sample with out of time pile up (see Figures \ref{fig_ttg_clo_test_21} and \ref{fig_ttg_clo_test_22}). The results show that the combination of \ttgamma + jets and \ttbar samples lead to overfitting the number of real photons instead of underfitting them. The combination of the \ttgamma with the \ttbar + jets sample leads to a more significant underfitting. This shows that the differences from expectation shown in Section \ref{sec_ttg_clo_oot} cannot be pinned down to a single sample where there something might be wrong, but rather that it is the combination of the samples that lead to the discrepancies.
+
+\begin{figure}[ht]
+  \subfigure[\ttgamma + jets with \ttbar]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/Closure_Test_oot_testmc}
+    \label{fig_ttg_clo_test_11}
+  }
+    \subfigure[\ttgamma + jets with \ttbar]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/Closure_Test_oot_testmc2}
+    \label{fig_ttg_clo_test_12}
+ }
+   \subfigure[\ttgamma with \ttbar +jets]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/Closure_Test_oot_test2mc}
+    \label{fig_ttg_clo_test_21}
+  }
+    \subfigure[\ttgamma with \ttbar +jets]{
+    \includegraphics[width = 0.52\textwidth] {Bilder/Closure_Test_oot_test2mc2}
+    \label{fig_ttg_clo_test_22}
+ }
+  \caption{The results of the closure tests with interchanged templates. The \ttgamma + jets and \ttbar +jets samples include out of time pile up.}
+  \label{fig_ttg_clo_test}
+\end{figure}
+
+\subsubsection{Conclusion}
+
+The tests that are performed to understand the unsatisfactory result of the closure test (with out of time pile up, see Section\ref{sec_ttg_clo_oot}) provide no satisfying reason. One reason could be the simulation mis-modeling the charged hadron isolation. This can be motivated by the comparison between simulation and data in Figure \ref{fig_ttg_fit_chhadnm1} where the photons in simulation seem to be less isolated than the ones in data, even without additional jets or out of time pile up. \\
+The other assumption would be that the random cone isolation technique does not work in this case, as evidenced by the disagreement between the template obtained with random cone isolation and the template of matched real photons obtained from simulation (see Figure \ref{fig_ttg_fit_raco}). \\ 
+Further tests are neccessary make a decision on the validity if the technique presented here. Because of time constraints, they could not be investigated. In order to illustrate what the end result looks like, the analysis is continued by investigating the systematic uncertainties and giving a final result.
+
+\section{Systematic Uncertainties}
+
+The systematic uncertainties are calculated according to \cite{CMS-PAS-TOP-13-011}. The specifics for each source are given below and the results are summarized. Generally these uncertainties are obtained by changing a certain parameter, then rerunning the whole analysis and taking the deviation of the result as systematic uncertainty. The results are found in Table \ref{tab_ttg_sys}.
+
+\begin{itemize}
+\item \textbf{Pileup}: The uncertainty on the pileup distribution mainly comes fro the uncertainty on the overall luminosity and the inelastic proton-proton cross section. This analysis assumes approximately 20 additional proton-proton interactions per event, based on a proton-proton cross section of \SI{69.4}{\milli \barn} \cite{Antchev:2011vs}. The systematic uncertainty is calculated according to the uncertainty of the cross section of \SI{5.9}{\percent}.  
+\item \textbf{Out of time pileup}: The uncertainty due to out of time pileup is estimated by mixing pseudo data from the out of time pile up and then fitting it with the templates used in the template fit. The difference between the fit results and the factors aplied in the mixing are then used as systematic uncertainty.
+\item \textbf{Signal normalization}: This uncertainty is calculated by varying the signal yield by \SI{\pm 25}{\percent}. This includes the variation of the kinematic scales for the cross section calculation \cite{Melnikov:2011ta}.
+\item \textbf{Background normalization}: The background normalization is varied within the individual cross section uncertainties. The single deviations are then summed up quadratically.
+\item \textbf{Hadronization/Showering}: The impact of the model used for the simulation is estimated by comparing samples simulated with POWHEG \cite{Alioli:2011as} \cite{Nason:2004rx} \cite{Frixione:2007vw} \cite{Alioli:2010xd} and then showered and hadronized with either PYTHIA \cite{Sjostrand:2006za} or HERWIG \cite{Corcella:2000bw}.
+\item \textbf{Generator}: This uncertainty is evaluated by comparing POWHEG and MADGRAPH samples showered with PYTHIA and POWHEG and MC@NLO \cite{Frixione:2002ik} \cite{Frixione:2003ei} samples showered with HERWIG. The largest deviation is taken as systematic uncertainty.
+\item \textbf{PDF uncertainties}: Due to technical reasons they were not calculated for this analysis. In the previous analysis their impact was negligible \cite{CMS-PAS-TOP-13-011}.
+\item \textbf{Top quark \pt}: There are differences between the \pt distribution of top quarks in data and simulation. Therefore simulated samples are reweighted according to the data distribution. In order to evaluate the uncertainty caused by the reweighing, the weights are either doubled or set to zero.
+\item \textbf{Identification of b-jets}: The impact of b-tagging has to be corrected in simulation depending on the \pt , $\eta$ and flavour of a jet \cite{CMS-PAS-BTV-13-001}. The b-tagging uncertainty is estimated by varying these scaling factors within their uncertainties.
+\item \textbf{Jet energy correction}: The jet energy correction factors are varied within their uncertainty.
+\item \textbf{Jet energy resolution}: The jet energy resolution is smeared in simulation to match the resolution found in data. The smearing factors are varied within their uncertainties.
+\end{itemize}
+
+\begin{table}[ht]
+\centering
+\caption{Uncertainties on the relation between \ttbar and \ttgamma cross sections $R^{vis}$ and the \ttgamma cross section $\sigma_{\ttgamma}$.}
+\label{tab_ttg_sys}
+\begin{tabular}{l c c} \\
+
+\hline
+
+\hline
+
+Source & \multicolumn{2}{c}{Uncertainty (\%)} \\
+
+& $R^{vis}$ & $\sigma_{\ttgamma}$ \\
+
+\hline
+
+Statistical & 4.1 & 4.1 \\
+
+\hline
+
+Systematic & 18.2 & 19.4 \\
+
+\hline
+
+Individual contributions: & & \\
+
+\;\;\;pileup & 0.4 & 0.3 \\
+
+\;\;\;out-of-time pileup & 8.2 & 8.2 \\
+
+\;\;\;$\sigma_{\mathrm{ sig}}$ & 9.0 & 9.0 \\
+
+\;\;\;$\sigma_{\mathrm {bkg}}$ & 1.4 & 1.4 \\
+
+\;\;\;shower./hadr. & 3.0 & 3.0 \\
+
+\;\;\;generator & 13.0 & 13.0 \\
+
+\;\;\;top-quark \pt & 0.5 & 0.3 \\
+
+\;\;\;b-tag & 0.3 & 0.3 \\
+
+\;\;\;JEC & 1.9 & 1.7 \\
+
+\;\;\;JER & 0.3 & 0.4 \\
+
+\hline
+
+\textbf{Total} & 18.7 & 19.8 \\
+
+\hline
+
+\hline
+
+\end{tabular}
+\end{table}
+
+\section{The \ttgamma Cross Section}
+
+The ratio between the \ttbar and the \ttgamma cross section is determined according to Equation \ref{eq_ttg_cros_R}.
+
+\begin{equation}
+R \equiv \frac{R^{vis}}{\epsilon^{vis}_{\gamma}} = \frac{\sigma_{\ttgamma}}{1} \cdot \frac{1}{\sigma_{\mathrm{t}\overline{\mathrm{t}}}} = \frac{N^{sig}_{\ttgamma}}{\epsilon^{vis}_{\gamma} \epsilon_{\gamma}} \cdot \frac{1}{N^{presel} \pi_{\mathrm{t}\overline{\mathrm{t}}}}
+\label{eq_ttg_cros_R}
+\end{equation}
+
+Here the purity of the \ttbar selection (see Equation \ref{eq_ttg_cros_purtt})   and the efficiency of the photon selection (see Equation \ref{eq_ttg_cros_effgam}) are determined from simulation.
+
+\begin{equation}
+\pi_\ttbar = N_\ttbar^{presel} / N^{presel} = \SI{84.3}{\percent}
+\label{eq_ttg_cros_purtt}
+\end{equation}
+
+\begin{equation}
+\epsilon_{\gamma}^{vis} \epsilon_{\gamma} = N_\ttgamma^{sel} / N_ttgamma^{presel} = \SI{62.9}{\percent}
+ \label{eq_ttg_cros_effgam}
+\end{equation}
+
+The luminosity, detector acceptance and the preselection efficiency cancel out. The result is shown in Equation \ref{eq_ttg_cros_Rres}.
+
+\begin{equation}
+R^{vis} = (0.93 \;\pm 0.04\,\mathrm{stat}\;\pm 0.17\,\mathrm{syst})\cdot 10^{-2} \hspace{1cm} R = (1.15 \;\pm 0.05\,\mathrm{stat}\;\pm 0.21\,\mathrm{syst})\cdot 10^{-2}
+\label{eq_ttg_cros_Rres}
+\end{equation}
+
+The cross section of the \ttgamma process is calculated by multiplying $R$ with $\sigma_\ttbar$. The CMS result is shown in Equation \ref{CMS-PAS-TOP-12-007} \todo{Better Value ?}.
+
+\begin{equation}
+\sigma_\ttbar^{\mathrm{CMS}} = \SI{227 \pm 15}{\pico \barn}
+\label{eq_ttg_cros_restt}
+\end{equation}
+
+This leads to a the result for the \ttgamma cross section shown in Equation \ref{eq_ttg_cros_res}.
+
+\begin{equation}
+\sigma_{\ttgamma} \;=\; R\;\cdot \;\sigma_{\ttbar} \; =\; 2.6\;\pm \;0.1\mathrm{ (stat.)} \;\pm \;0.5\mathrm{ (syst.)}\; \SI{}{\pico \barn}
+\label{eq_ttg_cros_restt}
+\end{equation}
+
+This is consistent with both the theoretical prediction of $\sigma_\ttgamma = \SI{1.8 \pm 0.5}{\pico \barn}$ and the CMS result of $\sigma_\ttgamma^{CMS} = \SI{2.4\pm 0.6}{\pico \barn}$.
