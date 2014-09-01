@@ -1,0 +1,62 @@
+\chapter{Simulation and Reconstruction}
+
+In this chapter the simulation and reconstruction of events in the CMS framework is described. The reconstruction applies to both measured and simulated events.
+
+\section{Simulated Events}
+
+The first step in simulation consists of calculating the cross section of a certain process. Then events are randomly simulated according to the specifications used for the cross section generation. For the simulated samples used in this analysis (unless otherwise noted) the matrix-element generator MADGRAPH is used for this step \cite{Alwall:2014hca} with the CTEQ6L1 PDF \cite{Pumplin:2002vw}. The single top samples where generated with POWHEG \cite{Nason:2004rx} \cite{Frixione:2007vw} \cite{Alioli:2010xd} \cite{Re:2010bp} \cite{Alioli:2009je}. \\
+In the next step the the decay of $\tau$ leptons is simulated with TAUOLA \cite{Davidson:2010rw}. \\
+Radiation from the initial and final state particle  as well as hadronization and showering are modeled with PYTHIA \cite{Sjostrand:2006za}. \\
+The MLM matching procedure is applied in order to avoid ambiguities between matrix element generation and showering \cite{Mangano:2006rw}.\\
+The underlying event is modeled with the Z2 tune \cite{Field:2012jv}. To estimate the effect of pile up events a number of soft interactions is added to the event. \\
+The response of the detector is simulated with GEANT4 \cite{Agostinelli:2002hh}.
+
+\section{Reconstruction}
+
+Here the reconstruction as implemented in the CMSSW framework is described. \\
+In the RECO step a list of particle candidates is produced. Then the particle flow algorithm forms a list of unambiguous particle objects. Then combined objects like jets are created. As shown in Figure \ref{fig_reco_cms}, all detector subsystems are combined for the reconstruction. \\
+After a short introduction of the tracking and supercluster algorithms, the particle flow algorithm is described. At last the jet algorithm is outlined.\\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width = 0.8\textwidth] {Bilder/CMS_Slice}
+  \caption{Slice of the CMS detector. Included is a illustration of particles passing through the CMS detector \cite{cms_slice}.}
+  \label{fig_reco_cms}
+\end{figure}
+
+\subsubsection{The Tracking Algorithm}
+
+The CMS tracking algorithm utilizes an iterative approach using the Kalman-filter \cite{Fruhwirth:1987fm} technique. Depending on the result of a fit and further quality criteria hits are assigned to a track. The hits of accepted tracks are then removed from the hit collection for the next iteration. Primary and secondary vertices are reconstructed using these tracks. Details can be found in \cite{Adam:934067}.
+
+\subsubsection{The Supercluster Algorithm}
+
+In the ECAL superclusters are used to estimate the impact of photon conversion and Bremsstrahlung. Both effects lead to a spread in the energy disposition in the ECAL. The supercluster should include the energy of both particles, so that the original particle can be reconstructed. \\
+In the barrel a "hybrid" algorithm uses a fixed number of five pixels in $\eta$ direction and a variable number of clusters in $\phi$ direction.\\
+In the endcaps the "Multi5x5" algorithm uses clusters of a fixed size of 5x5 pixels around the highest energy deposition. \\
+A more detailed description can be found in \cite{cmsTDR1}.
+
+\subsection{The Particle Flow Algorithm}
+
+The particle flow algorithm \cite{CMS-PAS-PFT-09-001} resolves ambiguities and produces a list of reconstructed particles. The input consists of tracks, clusters from the calorimeters and particle candidates. The steps are as follows:
+
+\begin{itemize}
+\item The inner tracks are linked to the calorimeter clusters and tracks in the muon system. The quality of the link is determined through distance (calorimeter clusters) or a fit (muon system). Bremsstrahlung is included and the link with the best quality is taken.
+\item Tracks with links to the muon system are identified as muons and removed from the collection. For each muon an average amount of energy is subtracted from the calorimeter clusters.
+\item Electron candidates are re-investigated by fitting the track to a calorimeter entry including Bremsstrahlung. If the candidate is accepted as an electron, the calorimeter entries and the track are removed.
+\item Remaining tracks are considered to be charged hadrons. If a matching calorimeter cluster can be found the tracks are refitted.
+\item Any surplus of energy in the calorimeters is considered to be either a photon or a neutral hadron. If the energy deposition is primarily in the ECAL a photon is reconstructed. If it is primarily in the HCAL the particle is considered to be a neutral hadron.
+\end{itemize}
+
+\subsection{The Reconstruction of a Jet}
+
+A jet is a combination of collinear particles within a certain area. It is mostly considered to arise from a single quark or gluon due to hadronization and the subsequent decay and / or showering. \\
+Jet algorithms are used to cluster particles that are believed to come from the same parton. The sum of the four momenta of all particles in the jet (the four momentum of the jet) should then correspond to the four momentum of the original particle. \\
+These jet algorithms should be stable in respect to collinear emission, where two particles might be reconstructed as one, and soft emission, which might not be detected. \\
+In this analysis the anti-kt algorithm is used \cite{Cacciari:2008gp} applying a distance parameter of $\rho = 0.5$. Particle flow objects are used for the clustering. \\
+
+\subsubsection{B-Tagging}
+
+The identification of the jet flavor, i.e. the flavor of the original quark resulting in the jet is difficult. Nevertheless it is possible to do so for b quarks due to the long lifetime of B mesons. In CMS these b jets typically originate from a secondary vertex. Because of the precision of the inner tracking system this secondary vertex can be separated from the primary vertex. \\
+\todo{Picture ?}
+
+In this analysis a combined secondary vertex b-tag (CSVM) \cite{Chatrchyan:2012jua} at medium operation point is used. It employs are multivariate analysis with track based observables to distinguish b jets from light flavor jets.

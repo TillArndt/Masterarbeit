@@ -42,7 +42,7 @@ The leading order cross section calculated by the matrix element generators is n
 \section{Generator Comparison}
 \label{ch_simu_comp}
 
-This section compares the two leading order matrix element generators MADGRAPH and WHIZARD for the $pp \to \ttgamma$ process. MADGRAPH is widely used within the CMS collaboration. WHIZARD has been used in a previous \ttgamma analysis \cite{CMS-PAS-TOP-13-011} and it allows for the test of models with a non Standard Model coupling between top quark and photon. Both are used to generate the matrix element of a given process and produce events in the LHEF format \cite{Alwall:2006yp}. They are interfaced with LHAPDF \cite{Whalley:2005nh} and FastJet\cite{Cacciari:2011ma}. Further effects like hadronization are not considered, as other algorithms like PYTHIA \todo{Citation} are used for this purpose within CMS (see Chapter \todo{Link} for a description of event simulation within CMS).
+This section compares the two leading order matrix element generators MADGRAPH and WHIZARD for the $pp \to \ttgamma$ process. MADGRAPH is widely used within the CMS collaboration. WHIZARD has been used in a previous \ttgamma analysis \cite{CMS-PAS-TOP-13-011} and it allows for the test of models with a non Standard Model coupling between top quark and photon. Both are used to generate the matrix element of a given process and produce events in the LHEF format \cite{Alwall:2006yp}. They are interfaced with LHAPDF \cite{Whalley:2005nh} and FastJet\cite{Cacciari:2011ma}. Further effects like hadronization are not considered, as other algorithms like PYTHIA are used for this purpose (see Chapter \todo{Link} for a description of event simulation within CMS).
 
 \subsection{The $2 \to 3$ Process}
 
@@ -99,9 +99,9 @@ This shows that MADGRAPH and WHIZARD are compatible for a simple $2 \to 3$ proce
   }
   \\
     \subfigure[$\pt(\overline{\mathrm{t}})$]{
-    \includegraphics[width = 0.67\textwidth] {Bilder/tquarkPt_Comp_2to3}
+    \includegraphics[width = 0.67\textwidth] {Bilder/antitquarkPt_Comp_2to3}
   }
-      \subfigure[$\pt(\gamma)$ \todo{Caption}]{
+      \subfigure[$\pt(\gamma)$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/photonEt_Comp_2to3}
   }
   \caption{Comparison between the MADGRAPH and WHIZARD generators for the $2 \to 3$ process. All distributions are normalized to unity.}
@@ -110,14 +110,14 @@ This shows that MADGRAPH and WHIZARD are compatible for a simple $2 \to 3$ proce
 
 \begin{figure}
 \centering
-  \subfigure[$\pt(\mathrm{t})$]{
+  \subfigure[$\eta (\gamma)$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/photonEta_Comp_2to3}
   }
   \\
-    \subfigure[$\pt(\overline{\mathrm{t}})$]{
+    \subfigure[$\eta (\mathrm{t})$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/tquarkEta_Comp_2to3}
   }
-      \subfigure[$\pt(\gamma)$ \todo{Caption}]{
+      \subfigure[$\Delta \mathrm{R} (\gamma,\mathrm{t})$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/dRphotonT_Comp_2to3}
   }
   \caption{Comparison between the MADGRAPH and WHIZARD generators for the $2 \to 3$. All distributions are normalized to unity.}
@@ -176,7 +176,7 @@ Several observables are compared for MADGRAPH and WHIZARD, the result is shown i
     \subfigure[$\Delta \mathrm{R}(\mathrm{W},\gamma)$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/dRphotonw_Comp_2to5}
   }
-      \subfigure[$|\eta |(\gamma)$ \todo{Caption}]{
+      \subfigure[$\eta (\gamma)$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/photonEta_Comp_2to5}
   }
   \caption{Comparison between the MADGRAPH and WHIZARD generators for the $2 \to 5$ process. All distributions are normalized to unity.}
@@ -193,7 +193,7 @@ Several observables are compared for MADGRAPH and WHIZARD, the result is shown i
     \subfigure[$\pt{\mathrm{W}^+}$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/wpPt_Comp_2to5}
   }
-      \subfigure[$\pt(\mathrm{b})$ \todo{Caption}]{
+      \subfigure[$\pt(\mathrm{b})$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/bquarkPt_Comp_2to5}
   }
   \caption{Comparison between the MADGRAPH and WHIZARD generators for the $2 \to 5$ process. All distributions are normalized to unity.}
@@ -268,10 +268,10 @@ The difference of $\SI{12.9}{\percent}$ between the two generators is in the exp
     \includegraphics[width = 0.67\textwidth] {Bilder/photonEt_2to7}
   }
   \\
-    \subfigure[ $|\eta |(\gamma)$]{
+    \subfigure[ $\eta (\gamma)$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/photonEta_2to7}
   }
-      \subfigure[ $\Delta \mathrm{R}(\mathrm{b},\gamma)$\todo{Caption}]{
+      \subfigure[ $\Delta \mathrm{R}(\mathrm{b},\gamma)$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/dRphotonB_2to7}
     \label{fig_simu_comp_2to7_drgb}
   }
@@ -288,7 +288,7 @@ The difference of $\SI{12.9}{\percent}$ between the two generators is in the exp
     \subfigure[$\Delta \mathrm{R} (\gamma,\mathrm{l})$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/dRphotonLepton_2to7}
   }
-      \subfigure[$\pt(\mathrm{q})$ \todo{Caption}]{
+      \subfigure[$\pt(\mathrm{q})$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/quarkPt_2to7}
   }
   \caption{Comparison between the MADGRAPH and WHIZARD generators for the factorized $2 \to 7$ process. All distributions are normalized to unity.}

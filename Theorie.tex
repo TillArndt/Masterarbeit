@@ -1,0 +1,160 @@
+\chapter{Theory}
+
+This chapter shortly introduces the theory of particle physics and then discusses the implications for photon production in top-quark pair events. The Standard Model (SM) of particle physics is briefly summarized. The following section deals with the aspects of top-quark pair production and decay. At last the specifics of photon radiation in top-quark pair events are investigated and previous measurements are presented.
+
+\section{The Standard Model of Particle Physics}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width = 0.5\textwidth] {Bilder/StandardModel}
+  \caption{The particles of the Standard Model including there mass, charge and spin. \cite{sm_part}}
+  \label{fig_theo_sm}
+\end{figure}
+
+The Standard Model of particle physics describes the interaction of subatomic particles shown in Figure \ref{fig_theo_sm}. The particles are considered to be elementary particles in the SM. Of these elementary particles the fermions have a non integer spin and constitute the matter described in the SM. In contrast the bosons with an integer spin mediate the three forces of the SM. \\
+The fermions can themselves be divided into two categories (see Table \ref{tab_theo_sm_ferm}): The quarks, which carry a color charge and the leptons that do not. Fermions can be organized into three generations where each generation is comprised of identical particles. Only the mass of the particles increases with each generation. Each fermion has an anti-fermion partner with opposite additive quantum numbers, but the same spin and mass as the original particle. Most of the matter found on earth consists of first generation leptons. \todo{Discovery ?} \\
+
+\begin{table}[ht]
+\caption{Fermions of the standard model \cite{Davids}, $T_3$ denotes the appropriate\\ equivalent to strong isospin for the second and third generation quarks.}
+\begin{tabular}{|c||c|c|c|c|c|c|c|}
+\cline{2-4}
+\multicolumn{1}{c}{}& \multicolumn{3}{|c|}{Generation}& \multicolumn{4}{c}{}\\ \hline
+Fermions & I & II & III & $Q[e]$ & $T_{3}$ & $Y$ & Color\\ \hline \hline
+\multirow{4}{*}{Leptons} & \multirow{2}{*}{$\left(\begin{array}{c}\nu_{e}\\e^{-}\end{array}\right)_{L}$} & \multirow{2}{*}{$\left(\begin{array}{c}\nu_{\mu}\\ \mu^{-}\end{array}\right)_{L}$} & \multirow{2}{*}{$\left(\begin{array}{c}\nu_{\tau}\\ \tau^{-}\end{array}\right)_{L}$} & $0$ & $1/2$ & $-1$ & -\\\cline{5-8}
+&  &  &  & $-1$ & $-1/2$ & $-1$ & -\\ \cline{5-8}
+& $\nu_{e,R}$ & $\nu_{\mu,R}$ & $\nu_{\tau,R}$ & $0$ & $0$ & $0$ & -\\\cline{5-8}
+& $e_{R}^{-}$ & $\mu_{R}^{-}$ & $\tau_{R}^{-}$ & $-1$ & $0$ & $-2$ & -\\ \hline
+\multirow{4}{*}{Quarks} & \multirow{2}{*}{$\left(\begin{array}{c}u\\d\end{array}\right)_{L}$} & \multirow{2}{*}{$\left(\begin{array}{c}c\\s\end{array}\right)_{L}$} & \multirow{2}{*}{$\left(\begin{array}{c}t \\ b\end{array}\right)_{L}$} & $2/3$ & $1/2$ & $1/3$ & rgb\\\cline{5-8}
+&  &  &  & $-1/3$ & $-1/2$ & $1/3$ & rgb\\ \cline{5-8}
+& $u_{R}$ & $c_{R}$ & $t_{R}$ & $2/3$ & $0$ & $4/3$ & rgb\\\cline{5-8}
+& $d_{R}$ & $s_{R}$ & $b_{R}$ & $-1/3$ & $0$ & $2/3$ & rgb\\ \hline
+\end{tabular}
+\centering
+\label{tab_theo_sm_ferm}
+\end{table}
+
+Two of the three forces in the SM, the electromagnetic and the weak force can be combined into the electroweak force (Quantum Electro Dynamic / QED). This combination leads to four bosons as force carriers: The $W^\pm$ bosons, the $Z$ bosons and the photon or $\gamma$.  \todo{Rework ?}\\
+The third force is the strong force {Quantum Chromo Dynamics / QCD}, which is mediated by the eight gluons carrying the different color combinations \cite{Politzer:1974fr}. The fourth fundamental force, gravity is not described in the SM.\\ 
+The last missing boson to be found was the Higgs boson, which was discovered in 2012 \cite{Aad:2012tfa} \cite{Chatrchyan:2012ufa}. The Higgs boson introduces the masses of the $W^\pm$ and $Z$ bosons into the standard models through electroweak symmetry breaking \cite{Salam:1968rm} \cite{Weinberg:1967tq} \cite{Glashow:1961tr}. \\
+The SM can be described with the following symmetry group (see Equation \ref{eq_theo_sm_sym}), where the two later groups constitute the QED unification:
+\begin{equation}
+SU(3)_C \; \times \; SU(2)_L \; \times \; U(1)_Y
+\label{eq_theo_sm_sym}
+\end{equation}
+
+After electro-weak symmetry breaking through the Higgs mechanism the Lagrangian of electromagnetic interaction in the QED is described by Equation \ref{eq_theo_sm_lagwk}.
+
+\begin{equation}
+\mathcal{L} = \bar{\psi} (i \gamma^\mu \delta_\mu - m) \psi - \frac{1}{4} F_{\mu \nu} F^{\mu \nu} - q \bar{\psi} \gamma^\mu A_\mu \psi
+\label{eq_theo_sm_lagwk}
+\end{equation}
+
+Here the first two terms describe the kinematics of the fermion and the photon respectively. The third term describes the interaction between the photons and fermions. The investigation of photons radiated by the top quark investigates this interaction term close to the \SI{}{\tera \electronvolt} scale.\\
+At a proton-proton collider such as the LHC the behavior of the constituents of the protons (quarks, gluons), described by the QCD, has to be understood. Perturbative solutions are only valid for high momentum transfers $Q^2$ in the QCD. For low $Q^2$ a phenomenological approach is used. Both of these solutions can be convoluted without further dependencies due to the QCD factorization theorem \cite{Collins:1987pm}.\\
+
+\begin{figure}[ht]
+  \subfigure[]{
+    \includegraphics[width = 0.49\textwidth] {Bilder/cteq6l1_gg}
+      }
+    \subfigure[]{
+    \includegraphics[width = 0.49\textwidth] {Bilder/cteq6l1_qq}
+  }
+  \caption{Plot of the luminosity of a parton versus the center of mass energy of the collision. Several scenarios for the overall center of mass energy of the LHC are plotted. The CTEQ6L1 PDF is used. \cite{Quigg:2009gg} \cite{Pumplin:2002vw}}
+  \label{fig_theo_pdf}
+\end{figure}
+
+For the energy of the constituents of the proton at high energies a parton distribution function (PDF) is used (for an example see Figure \ref{fig_theo_pdf}). At leading order the PDFs only depend on the momentum transfer $Q^2$ and the momentum fraction of the parton $x$. At next-to leading order singularities in the initial state are introduced through the radiation of low energetic gluons. As a solution a cutoff scale is introduced that contributes logarithmically. It can be defined as a redefinition of the PDF by introducing another factorization scale $\mu_F$ (see Equation \ref{eq_theo_sm_refac} \cite{tholen:ma} \cite{ubiali_phd}). The first term describes the hard interaction, the second term the redefined PDF.\\
+
+\begin{equation}
+\log \frac{Q^2}{\mu^2} = \log \frac{Q^2}{\mu^2_F} + \log \frac{\mu^2_F}{\mu^2}
+\label{eq_theo_sm_refac}
+\end{equation}
+
+Another scale has to be introduced to the calculation in order to prevent ultra violet singularities in the loop calculations. A cutoff at the renormalization scale $\mu_R$ is chosen to suppress these singularities. \cite{'tHooft:880603}. \\
+The value of both scales $\mu_R$ and $\mu_F$ can not be motivated from a physics process. They are often set to the mass of the heaviest particle involved in the calculated process. The uncertainty introduced through these scales is normally estimated by varying the scales by the factor two and one-half. The following deviations are then taken as uncertainties.
+
+\section{The Top Quark}
+
+The top quark was discovered at the Tevatron collider in 1995 \cite{Abe:1995hr} \cite{Abachi:1995iq}. Its mass is measured to be \SI[parse-numbers=false]{173.34 \pm 0.27(stat) \pm 0.71(syst)}{\giga \electronvolt} \cite{arXiv:1403.4427}. The life time of the top quark of \SI{0.5d-24}{\second} is shorter than the hadronization time scale $\tau_{had} \approx \SI{d-23}{\second}$ allowing for the direct measurement of quark properties \cite{toppdg}.
+
+\subsection{Top-Quark Pair Production}
+
+At the LHC top quarks are mostly produced in pairs. They can also be produced as single top quarks, but these events are only considered as background in this analysis. The production cross section of top-quark pairs at a center of mass energy of $\sqrt{s} = \SI{8}{\tera \electronvolt}$ was measured to be $\sigma_{\ttbar}^{\mathrm{CMS}} = \SI{227 \pm 15}{\pico \barn}$ by the CMS experiment \cite{CMS-PAS-TOP-12-007}. \\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width = 0.8\textwidth] {Bilder/topquark_prod}
+  \caption{Feynman diagrams for the production of top-quark pairs. The upper row shows gluon-gluon fusion in the s-, t-, and u-channel. The lower row shows quark anti-quark annihilation in the s-channel \cite{tholen:ma}. }
+  \label{fig_theo_top_prod}
+\end{figure}
+
+As shown in Figure \ref{fig_theo_top_prod} top quarks can be produced either through gluon-gluon fusion or through quark-antiquark annihilation. At a center of mass energy of $\sqrt{s} = \SI{8}{\tera \electronvolt}$ about \SI{80}{percent} of top-quark pairs are produced through gluon-gluon fusion and the remaining \SI{20}{\percent} are produced through quark-antiquark annihilation \cite{toppdg}.  It is important for an investigation of \ttgamma events that only the quark-antiquark production process produces additional photons in the initial state. \todo{Repetition ?}. \\
+
+\subsection{Top-Quark Pair Decay}
+
+With a CKM matrix element of $V_{tb} =  \SI[parse-numbers=false]{0.998 \pm 0.038 (exp.) \pm 0.016 (theo.)}{}$ the top quark almost exclusively decays into a W boson and a b quark \cite{Khachatryan:2014iya}. The different top-quark pair decay channels are classified following the subsequent W boson decay (see Figure \ref{fig_theo_top_decay}): 
+
+\begin{figure}[ht]
+  \subfigure[]{
+    \includegraphics[width = 0.49\textwidth] {Bilder/ttbar_feyn}
+      }
+    \subfigure[]{
+    \includegraphics[width = 0.49\textwidth] {Bilder/ttbar_branch}
+  }
+  \caption{(a): Decay of the top quark up to the W boson and the b quark \cite{tholen:ma}. (b): Branching ratios of the subsequent W decays \cite{top_branch}. }
+  \label{fig_theo_top_decay}
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Di-leptonic}: Both W bosons decay into a lepton and the appropriate neutrino. This decay channels provide a very clear signature, but kinematic reconstruction is difficult due to the two neutrinos. These neutrinos can not be measured directly by the detector, they can only be reconstructed through an imbalance in the \pt of the event. The branching ratio for di-leptonic decays is 1/81 for leptons with the same flavor and 2/81 for different flavored \todo{Possible Wording ?} leptons.
+\item \textbf{Semi-Leptonic}: One W boson decays into a lepton and  a neutrino, the other into quarks. For an electron or muon this leads to a clear signature. The semi-muonic channel is sometimes called the "golden channel" due to the combination of clear signature and relatively high branching ratio. The semi-leptonic channels have a branching ratio o 12/81.
+\item \textbf{Full-hadronic}: Both W bosons decay into quarks. This channel has the highest branching ratio with 4/9 and all the final state particle can be measured by the detector. At a proton-proton collider a signature consisting only of hadrons has to deal with a very large background through QCD multijet events. Additionally, the measurement of the jet energy comes with a high uncertainty.
+\end{itemize}
+
+For this analysis the semi-leptonic channel is used. The exact signature is described in Section \todo{Link}.
+
+\subsection{The Top-Photon Vertex}
+
+The couplings of the top quark can be parameterized with a set of eight effective operators $O_x$ \cite{AguilarSaavedra:2008zc}. The interactive Lagrangian can be written as a Taylor expansion where these effective operators contribute linearly with complex coefficients $C_x$ (as shown in Equation \ref{eq_theo_co_leff}).
+
+\begin{equation}
+\mathcal{L}^{eff} = \sum{\frac{C_x}{\Lambda^2} O_x + }
+\label{eq_theo_co_leff}
+\end{equation}
+
+\begin{figure}[ht]
+  \subfigure[]{
+    \includegraphics[width = 0.49\textwidth] {Bilder/feyn_topgamvert}
+      }
+    \subfigure[]{
+    \includegraphics[width = 0.49\textwidth] {Bilder/feyn_topgamvert_loop}
+  }
+  \caption{Feynman diagrams of the top photon vertex. (a) shows the leading order and (b) a NLO loop correction \cite{tholen:ma}. }
+  \label{fig_theo_top_gamvert}
+\end{figure}
+
+A Feynman diagram of the top photon vertex is shown in Figure \ref{fig_theo_top_gamvert}. Its Lagrangian can be written in the following form (see Equation \ref{eq_theo_co_lgam}):
+
+\begin{equation}
+  \mathcal{L}_{\ttgamma} = -e Q_t \overline{t} \gamma^{\mu} t A_{\mu} - e \overline{t} \frac{i \sigma^{\mu \nu}}{m_t} (d_V^{\gamma} + i d_a^{\gamma} \gamma_5) t A_{\mu}
+  \label{eq_theo_co_lgam}
+  \end{equation}
+
+Here the first term represents the SM. In the second term the form factors $d_V^{\gamma}$ and $d_A^{\gamma}$ represent contributions from first order loop corrections and the magnetic and electric dipole moment of the top quark respectively (more details are found in Section \todo{Link}). \\
+The deviations of $d_V^{\gamma}$ and $d_A^{\gamma}$ define the operators $O_{uB\phi}^{33}$ and $O_{uW}^{33}$. They can be parameterized as seen in Equations \ref{eq_theo_co_dvgam} and \ref{eq_theo_co_dagam}. 
+
+\begin{equation}
+\delta d_V^{\gamma} = \frac{\sqrt{2}}{e} \mathrm{Re} \left[ c_W C_{uB\phi}^{33} + s_W C_{uW}^{33} \right] \frac{\nu m_t}{\Lambda^2} 
+\label{eq_theo_co_dvgam}
+\end{equation}
+
+\begin{equation}
+\delta d_A^{\gamma} = \frac{\sqrt{2}}{e} \mathrm{Im} \left[ c_W C_{uB\phi}^{33} + s_W C_{uW}^{33} \right] \frac{\nu m_t}{\Lambda^2} 
+\label{eq_theo_co_dagam}
+\end{equation}
+
+\section{Previous Measurements}
+
+Even though $C_{uB\phi}^{33}$ and $C_{uW}^{33}$ can not yet be measured directly, benchmark studies have been performed \cite{Hermanns:1292768}. The measurement should become possible in the future, with a higher center of mass energy and luminosity. \\
+Preliminary studies on the measurement of the magnetic moment of the top quark $d_V^{\gamma}$ through the kinematics of a radiated photon where done in \todo{Cite Markus}. A short benchmark study on the measurement of the electric moment is shown in this analysis. \\
+The CDF collaboration at the Tevatron has measured the inclusive \ttgamma cross section at a center of mass energy $\sqrt{s} = \SI{1.96}{\tera \electronvolt}$  as $\sigma_{\ttgamma}^{CDF} = \SI{0.18\pm0.08}{\pico \barn}$ \cite{Aaltonen:2011sp}. At the LHC the \ttgamma cross section has been measured by the Atlas collaboration at $\sqrt{s} = \SI{7}{\tera \electronvolt}$ as $\sigma_{\ttgamma}^{\mathrm{ATLAS}} = \SI[parse-numbers=false]{2.0 \pm 0.5 (stat) \pm 0.7 (sys.) \pm 0.08 (lumi.)}{\pico \barn}$ \cite{ATLAS-CONF-2011-122}. CMS has measured the \ttgamma cross section at $\sqrt{s} = \SI{8}{\tera \electronvolt}$ as $\sigma_{\ttgamma}^{\mathrm{CMS}} = \SI[parse-numbers=false]{2.4 \pm 0.2(stat.) \pm 0.6(syst.)}{\pico \barn}$ \cite{CMS-PAS-TOP-13-011}. All these measurements are consistent with the standard model expectation. 
