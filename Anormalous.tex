@@ -1,61 +1,55 @@
 \chapter{Anomalous Couplings}
+\label{sec_ano}
 
-In this chapter, a benchmark study for anomalous couplings of the top quark is presented. A generator study is used to evaluate the sensitivity of a possible \ttgamma analysis for a non zero magnetic dipole moment of the top quark.
+In this chapter, a benchmark study probing the sensitivity on anomalous couplings of the top quark is presented. A generator study is used to evaluate the sensitivity of a possible \ttgamma analysis for a non zero magnetic dipole moment of the top quark. The study of the electric-dipole moment of the top quark \cite{Backes} has already shown the challenging nature of such measurements. Consequently, only an initial investigation is performed here.
+
 \section{The Top-Photon Vertex}
+\label{sec_ano_theo}
 
-As previously mentioned \todo{Link} the \ttgamma Lagrangian can be described as shown in  Equation \ref{eq_ano_ttg} \cite{AguilarSaavedra:2008zc}.
+As mentioned in Section \ref{sec_theo_tgv} the \ttgamma Lagrangian can be described as shown in  Equation \ref{eq_ano_ttg} \cite{AguilarSaavedra:2008zc}:
 
 \begin{equation}
-  \mathcal{L}_{\ttgamma} = -e Q_t \overline{t} \gamma^{\mu} t A_{\mu} - e \overline{t} \frac{i \sigma^{\mu \nu}}{m_t} (d_V^{\gamma} + i d_a^{\gamma} \gamma_5) t A_{\mu}
+  \mathcal{L}_{\ttgamma} = -e Q_t \overline{t} \gamma^{\mu} t A_{\mu} - e \overline{t} \frac{i \sigma^{\mu \nu}}{m_t} (d_V^{\gamma} + i d_a^{\gamma} \gamma_5) t A_{\mu}.
   \label{eq_ano_ttg}
   \end{equation}
 
-Here the first term is the contribution from the standard model, where the Lagrangian is proportional to the top-quark charge $Q_t$.\\
-In the second term $d_A^{\gamma}$ and $d_V^{\gamma}$ are a possible electric- or  magnetic-dipole moment of the top quark, which would lead to loop corrections to the coupling strength of photons to top quarks. The electric-dipole moment is supposed to be heavily suppressed in the Standard Model \cite{Jersak:1981sp} and the magnetic-dipole moment is predicted to be zero. Consequently, any meaningful contribution should come from physics beyond the standard model. The magnetic-dipole moment was already discussed in another analysis \todo{Cite Markus}, therefore this analysis will look into a possible magnetic-dipole moment.\\
-The  magnetic dipole moment can be connected to a hypothetical non-point like charge distribution, which would lead to a non zero radius of the top quark. Following \cite{Englert:2012by} \cite{Kopp:1994qv} the relation is shown in Equation \ref{eq_ano_rad}.
+The first term is the contribution from the SM, where the Lagrangian is proportional to the top-quark charge $Q_t$.\\
+In the second term $d_A^{\gamma}$ and $d_V^{\gamma}$ are possible electric- or  magnetic-dipole momenta of the top quark, which would lead to loop corrections to the coupling strength of photons to top quarks. The electric-dipole moment is supposed to be heavily suppressed in the SM \cite{Jersak:1981sp} and the magnetic-dipole moment is predicted to be exactly zero. Consequently, any meaningful contribution should come from BSM physics. The electric-dipole moment was already discussed in another analysis \cite{Backes}. Therefore, this analysis probes a possible magnetic-dipole moment.\\
+The  magnetic dipole moment can be connected to a hypothetical non-point like charge distribution, which would lead to a non zero radius of the top quark. Following \cite{Englert:2012by,Kopp:1994qv} the relation is shown in Equation \ref{eq_ano_rad}:
 
 \begin{equation}
-R_t = \frac{\sqrt{6}}{\Lambda_{\ast}} \hspace{1.cm} d_V^{\gamma} = \frac{\rho m_t^2}{\Lambda_{\ast}}
+R_t = \frac{\sqrt{6}}{\Lambda_{\ast}} \hspace{1.cm} d_V^{\gamma} = \frac{\rho m_t^2}{\Lambda_{\ast}} = \frac{\rho m_t^2 R_t}{\sqrt{6}}.
 \label{eq_ano_rad}
 \end{equation}
 
-Here $\rho$ is a $\mathcal{O}(1)$ number, $\Lambda_{\ast}$ is the scale factor and $m_t$ is the top-quark mass.\\
-A non zero magnetic-dipole moment could have an effect on \ttgamma events. In this chapter several observables are investigated in order to assess their sensitivity. The production cross section is also examined.
+Here $\rho$ is a number of the order of one, $\Lambda_{\ast} \geq \SI{3.5}{\tera \electronvolt}$ is a scale factor and $m_t$ is the top-quark mass. The magnetic moment of the top quark has no dimension in this definition.\\
+A non zero magnetic-dipole moment could have an effect on the rate ("normalization") of \ttgamma events due to extra terms (see the Lagrangian in Equation \ref{eq_ano_ttg}). Kinematic distributions can provide additional separation power. Consequently,several observables as well as the production cross section are investigated in order to assess their sensitivity.
 
-\section{Investigation using Simulated Events}
+\section{Benchmark Study with Simulated Events}
+\label{sec_ano_simu}
 
-The generator WHIZARD is used to generate events for different top-quark magnetic dipole moments. The factorized $2 \to 7$ approach explained in Section \ref{ch_simu_con} and shown in Equation \ref{eq_ano_fac} is used.
-
-\begin{equation}
-\begin{split}
-& \mathrm{pp}\to \ttgamma,  \mathrm{t} \to \mathrm{bxx},  \overline{\mathrm{t}} \to \overline{\mathrm{b}} \mathrm{xx} \\
-& \mathrm{pp}\to \mathrm{t} \overline{\mathrm{t}},  \mathrm{t} \to \mathrm{bxx} \gamma,  \overline{\mathrm{t}} \to \overline{\mathrm{b}} \mathrm{xx} \\
-& \mathrm{pp}\to \mathrm{t} \overline{\mathrm{t}},  \mathrm{t} \to \mathrm{bxx},  \overline{\mathrm{t}} \to \overline{\mathrm{b}} \mathrm{xx} \gamma \\
-&  x\ = \ \mathrm{u}, \mathrm{d}, \mathrm{s}, \mathrm{c}, \overline{\mathrm{u}}, \overline{\mathrm{d}},  \overline{\mathrm{s}},  \overline{\mathrm{c}}, \mathrm{e}^{\pm}, \mu^{\pm}, \tau^{\pm}, \nu_{\mathrm{e},\mu,\tau}, \overline{\nu}_{\mathrm{e},\mu,\tau} 
-\end{split}
-\label{eq_ano_fac}
-\end{equation}
-
-These events also include photons which are not radiated from the top quark making them less sensitive for anomalous couplings, but it is difficult to separate these processes.\\
-Only the output of the matrix element generator is taken into account. The detector response or any other uncertainties are not included here.
+The generator WHIZARD is used to generate events for different top-quark magnetic dipole moments. The factorized $2 \to 7$ approach explained in Section \ref{ch_simu_con} is applied.
+Events where the photon is not radiated by the top quark are also included in the signal process reducing the sensitivity for anomalous couplings. Nevertheless, since they produce the same final state particles and their kinematic properties are very similar the separation of these events is not feasible.\\
+For this investigation, only the output of the matrix element generator is taken into account. The detector response or any other uncertainties are not included here.
 There should be a clear difference between the different scenarios, otherwise a real analysis using measured data is not reasonable.\\
-The values chosen here for the multiple scenarios are shown in equation \ref{eq_ano_val}.
+The values chosen here for the multiple scenarios are shown in Equation \ref{eq_ano_val}:
 
 \begin{equation}
-d_V^{\gamma} = 0.,\; 0.06,\; 0.12,\; 0.18,\; 0.30
+d_V^{\gamma} = 0.,\; 0.06,\; 0.12,\; 0.18,\; 0.30, \; 1.0, \; 1.5, \; \SI{5.0}{}.
 \label{eq_ano_val}
 \end{equation}
 
-The highest value of $d_V^{\gamma} = 0.30$ corresponds to a "radius" of $R_{\mathrm{t}} = \SI{0.65d-3}{\femto \meter}$. One point of orientation for the choice where the limits on the magnetic dipole moment of the top quark \cite{Englert:2012by}, the other was the radius of the proton $R_{\mathrm{p}} \approx \SI{1}{\femto \meter}$. The proton radius should be significantly greater than the radius of the top quark. \\
-As a first point for investigation the calculated cross sections for the $\mathrm{pp} \to \ttgamma $ process can be compared (see Table \ref{tab_ano_crosssec}). No errors are given here because of the technical complications when calculating these cross sections from the WHIZARD output (described in Section \ref{sec_simu_comp_2to7}). An error calculation is possible and would have to be included in an analysis, but for this benchmark study it is considered unnecessary.
+The value of $d_V^{\gamma} = \SI{0.30}{}$ corresponds to a radius of $R_{\mathrm{t}} = \SI{0.65d-3}{\femto \meter}$. Above this threshold the values can hardly be motivated physically. Consequently, the investigation is split in two parts, which also provides more clarity. The first deals with the values up to $d_V^{\gamma} = \SI{0.30}{}$, whereas the second includes the more extreme scenarios up to $d_V^{\gamma} = \SI{5.0}{}$. \\
+The scenarios with lower values for $d_V^{\gamma}$ are motivated by the current limits on the chromomagnetic structure of the top quark \cite{Englert:2012by}, where an upper limit on the color radius of $R_t^{color} < \SI{1.4d-4}{\femto \meter}$ is calculated. Additionally, the radius of the proton of $R_{\mathrm{p}} \approx \SI{1}{\femto \meter}$ should be significantly larger than the radius of the top quark. \\
+As a first point for investigation the calculated cross sections for the $\mathrm{pp} \to \ttgamma $ process can be compared (see Table \ref{tab_ano_crosssec}). No errors are given because of the technical limitations when calculating these cross sections from the WHIZARD output (described in Section \ref{sec_simu_comp_2to7}). The error on the experimental result of $\sigma^{CMS}_{\ttgamma} = \SI{2.4 \pm 0.6}{\pico \barn}$ ~\cite{CMS-PAS-TOP-13-011} should be significantly larger. However, the numbers indicate that there is no significant augmentation of the cross section. 
 
 \begin{table}[ht]
 \centering
-    \caption{Cross sections for the $\mathrm{pp} \to \ttgamma$ process as calculated by WHIZARD. Multiple scenarios for a possible anomalous magnetic dipole moment are compared. No errors are given.}
+    \caption{Cross sections for the $\mathrm{pp} \to \ttgamma$ process as calculated by WHIZARD. Multiple scenarios for a possible anomalous magnetic dipole moment are compared.}
     \begin{tabular}{| l | l |}
 
     \hline
-    $d_{V}^{\gamma}$ & $\sigma{\ttgamma} [\SI{}{\femto \barn}]$ \\
+    $d_{V}^{\gamma}$ & $\sigma_{\ttgamma} [\SI{}{\femto \barn}]$ \\
     \hline
     $0$ &  $1408$\\
     \hline
@@ -71,30 +65,31 @@ As a first point for investigation the calculated cross sections for the $\mathr
      \label{tab_ano_crosssec}
 \end{table}
 
-The values for the cross section show little separation power, the first three being clearly within the uncertainty of the calculation. The difference in cross section between Standard Model ($d_V^{\gamma} = 0$)  and a scenario with $d_V^{\gamma} = 0.3$ is $\Delta \sigma_{\ttgamma} = \SI{35}{\femto \barn}$. As of now, such a difference cannot be measured with the CMS detector  ($\sigma^{CMS}_{\ttgamma} = \SI{2.4 \pm 0.6}{\pico \barn}$\cite{CMS-PAS-TOP-13-011}).\\
-In the next step several kinematic observables are compared. They might offer more separation power than the comparison of the cross section.
+The values for the cross section show little separation power, as the difference in cross section between Standard Model ($d_V^{\gamma} = 0$)  and a scenario with $d_V^{\gamma} = 0.3$ is $\Delta \sigma_{\ttgamma} = \SI{35}{\femto \barn}$ is negligible. Currently, measuring such a difference is beyond the capabilities of the CMS detector and the LHC .\\
+In the next step several kinematic observables are considered to increase separation power. The \pt distribution of the photons is investigated, as a different $\mathrm{t}-\gamma$ coupling could lead to a harder emission spectrum. The coupling could also influence the emission angle, so the angular correlation between the photon and a light quark $\Delta \mathrm{R} (\gamma,q)$ or the top quark $\Delta \mathrm{R} (\gamma,t)$ are inspected.
 
-\begin{figure}
+\begin{figure}[ht]
 \centering
   \subfigure[$\pt(\gamma)$]{
-    \includegraphics[width = 0.67\textwidth] {Bilder/photonEt_Anomalous}
+    \includegraphics[width = 0.63\textwidth] {Bilder/photonEt_Anomalous}
   }
   \\
     \subfigure[$\Delta \mathrm{R} (\gamma, \mathrm{q})$]{
-    \includegraphics[width = 0.67\textwidth] {Bilder/dRphotonQ_Anomalous}
+    \includegraphics[width = 0.63\textwidth] {Bilder/dRphotonQ_Anomalous}
   }
       \subfigure[$\Delta \mathrm{R} (\gamma, \mathrm{t})$]{
-    \includegraphics[width = 0.67\textwidth] {Bilder/dRphotonT_Anomalous}
+    \includegraphics[width = 0.63\textwidth] {Bilder/dRphotonT_Anomalous}
   }
-  \caption{Comparison between different scenarios for an anomalous electric dipole moment of the top quark. All distributions are normalized to unity.}
+  \caption{Comparison in $\pt (\gamma)$,$\Delta \mathrm{R} (\gamma, \mathrm{q})$ and $\Delta \mathrm{R} (\gamma, \mathrm{t})$ between different scenarios for an anomalous magnetic dipole moment of the top quark. All distributions are normalized to unity.}
   \label{fig_ano_comp_1}
 \end{figure}
 
-The results are shown in Figure \ref{fig_ano_comp_1}. These comparisons show that the variables investigated here show no separation power.  The difference between the scenarios should be significant in order to at least have a chance of separating the two scenarios after the full detector simulation.\\
-A few more complicated observables are investigated in Figure \ref{fig_ano_comp_2}. In Figure \ref{fig_ano_comp_2_1} the transversal momentum of the top quark is shown in two bins. A similar observable is used in another study on anomalous top couplings \todo{cite Markus}. In Figure \ref{fig_ano_comp_2_2} the angle between the two top quarks is drawn. This observable is inspired by spin-correlation measurements \cite{CMS-PAS-TOP-12-004} \cite{Höhle:1349025}. In a real analysis they would have to be reconstructed, which is difficult, or the observable would have to be changed to a angular correlation of the decay products.\\
-Even with these observables the separation power does not increase significantly. For the phase space tested here, the data we currently have is insufficient for a measurement.   
+The results are shown in Figure \ref{fig_ano_comp_1}. These comparisons indicate that the investigated variables have no additional separation power.  The difference between the scenarios should be significant in order to at least have a chance of separating the two scenarios after the full detector simulation.\enlargethispage{\baselineskip}\\
+\FloatBarrier
+More sophisticated observables are investigated in Figure \ref{fig_ano_comp_2}. In Figure \ref{fig_ano_comp_2_1} the transversal momentum of the top quark is shown in two bins. A similar observable is used in another study on anomalous top couplings \cite{Backes}. In Figure \ref{fig_ano_comp_2_2} the angular correlation between the two top quarks is depicted. This observable is inspired by spin-correlation measurements \cite{CMS-PAS-TOP-12-004,Höhle:1349025}. Since the kinematic reconstruction of the top quarks is challenging, the observable for an actual analysis is usually the angular correlations between two decay products. \\
+Even with these observables the separation power does not increase significantly. In the phase space investigated here a measurement is currently impossible.   
 
-\begin{figure}
+\begin{figure}[ht]
 \centering
   \subfigure[$\pt(\gamma)$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/Rebin_Anomalous}
@@ -105,22 +100,16 @@ Even with these observables the separation power does not increase significantly
     \includegraphics[width = 0.67\textwidth] {Bilder/topangle_Anomalous}
     \label{fig_ano_comp_2_2}
   }
-  \caption{Comparison between different scenarios for an anomalous electric dipole moment of the top quark. All distributions are normalized to unity.}
+  \caption{Comparison in $\pt (\gamma)$ and $\theta (\mathrm{t},\overline{\mathrm{t}})$ between different scenarios for an anomalous magnetic dipole moment of the top quark. All distributions are normalized to unity.}
   \label{fig_ano_comp_2}
 \end{figure}
 
-To assess the impact of a very strong anomalous magnetic coupling, a few extreme scenarios were generated. The values for the electromagnetic coupling are shown in Equation \ref{eq_ano_val_ex}. They are unrealistic as such a high anomalous coupling would probably have been detected already.
-
-\begin{equation}
-d_V^{\gamma} = 0.,\; 0.30,\; 1.0,\;1.5,\; 5.0
-\label{eq_ano_val_ex}
-\end{equation}
-
-Again, the cross sections are investigated (see Table \ref{tab_ano_crosssec_ex}). The different scenarios are now clearly distinct and it would be possible to set a limit on the coupling using the CMS result of $\sigma^{CMS}_{\ttgamma} = \SI{2.4 \pm 0.6}{\pico \barn}$\cite{CMS-PAS-TOP-13-011}. Taking into account the large corrections factors between leading order and next to leading order discussed in Chapter \todo{Link} setting limits is not feasible. The technical difficulties when calculating the cross section from the WHIZARD output also make these results less suited for a limit calculation. \\
+As mentioned above, the second part of the benchmark study focuses on a very strong electromagnetic coupling up to $d_V^{\gamma} = \SI{5.0}{}$ . \\
+Again, the cross sections are investigated (see Table \ref{tab_ano_crosssec_ex}). The different scenarios are now clearly distinct and it is possible to set a limit on the coupling using the CMS result of $\sigma^{CMS}_{\ttgamma} = \SI{2.4 \pm 0.6}{\pico \barn}$\cite{CMS-PAS-TOP-13-011} (see Section \ref{sec_ano_lim}). \\
 
 \begin{table}[ht]
 \centering
-    \caption{Cross sections for the $\mathrm{pp} \to \ttgamma$ process as calculated by WHIZARD. Multiple scenarios for a possible very high anomalous magnetic dipole moment are compared. No errors are given. These are used to assess the general impact of a high anomalous coupling.}
+    \caption{Cross sections for the $\mathrm{pp} \to \ttgamma$ process as calculated by WHIZARD. Multiple scenarios for a possibly very high anomalous magnetic dipole moment are compared.}
     \begin{tabular}{| l | l |}
 
     \hline
@@ -140,9 +129,9 @@ Again, the cross sections are investigated (see Table \ref{tab_ano_crosssec_ex})
      \label{tab_ano_crosssec_ex}
 \end{table}
 
-Different kinematic observables are also studied (see Figure \ref{fig_ano_comp_ex}). The different scenarios are separable, especially the one with $d_{V}^{\gamma} = 5.0$ shows distinctive behavior. A limit calculation would be possible using either more different simulated scenarios and interpolation or  matrix element reweighing to achieve a continuous distribution. These methods would require a lot of effort and are not further pursued in this analysis.
+The same kinematic observables are studied again (see Figure \ref{fig_ano_comp_ex}). The different scenarios are separable, especially the one with $d_{V}^{\gamma} = 5.0$ shows distinctive behavior. A limit calculation using these observables is possible with either more simulated scenarios and interpolation or  matrix element reweighting to achieve a continuous distribution. Since this requires a lot of effort, the cross section is used to estimate the sensitivity of \ttgamma events for an anomalous magnetic moment of the top quark.
 
-\begin{figure}
+\begin{figure}[ht]
 \centering
   \subfigure[$\pt(\gamma)$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/photonEt_Anomalous_extreme}
@@ -154,10 +143,28 @@ Different kinematic observables are also studied (see Figure \ref{fig_ano_comp_e
       \subfigure[$\Delta \mathrm{R} (\gamma, \mathrm{t})$]{
     \includegraphics[width = 0.67\textwidth] {Bilder/dRphotonT_Anomalous_extreme}
   }
-  \caption{Comparison between extreme scenarios for an anomalous electric dipole moment of the top quark. All distributions are normalized to unity.}
+  \caption{Comparison in $\pt (\gamma)$,$\Delta \mathrm{R} (\gamma, \mathrm{q})$ and $\Delta \mathrm{R} (\gamma, \mathrm{t})$ between extreme scenarios for an anomalous magnetic dipole moment of the top quark. All distributions are normalized to unity.}
   \label{fig_ano_comp_ex}
+\end{figure}
+
+\section{Estimation of Sensitivity}
+\label{sec_ano_lim}
+
+As shown in Section \ref{sec_ano_simu}, the cross section of \ttgamma events is sensitive for high values for a magnetic dipole moment. However, setting a limit would require the calculation of NLO cross sections, since the correction factor between LO and NLO is significant in the \ttgamma sector (see Section \ref{sec_simu_conc}). An additional challenge lies in the \ttgamma cross section measurement that uses the $2 \to 5$ process. \\
+Still, it is possible to at least give a rough estimate of the sensitivity. The NLO correction factor is conservatively estimated to be $k = \SI{2 \pm 1}{}$. This should be a good estimation, since the lower threshold of the cross section is important for the upper limit on $d_V^{\gamma}$. So the important assumption is, that the NLO cross section should not be lower than the LO cross section. \\
+The sensitivity is estimated by plotting the magnetic moment of the top quark $d_V^{\gamma}$ against the \ttgamma cross section $\sigma_{\ttgamma}$. The values for $d_V^{\gamma}$ are extrapolated between the scenarios shown above by a monotone function. The cross section is then projected onto the value for $d_V^{\gamma}$ taking into account the uncertainties. The cross section measurement described in Section \ref{sec_ttg} of $\sigma_{\ttgamma} = \SI{2.6 \pm 0.5}{\pico \barn}$ is used for the projection shown in Figure \ref{fig_ano_lim_bench}. \\
+The projection shows that the measurement is sensitive for values above $d_V^{\gamma} = 2$. This value corresponds to a value of $ R_t = \SI{5d-3}{\femto \meter}$ which is about \SI{0.5}{\percent} of the proton radius.  \\
+This sensitivity is not competitive with the limits on $R_t$ from the chromomagnetic sector, where a limit of $R_t < \SI{1.4d-4}{\femto \meter}$ has been measured\cite{Englert:2012by}. 
+
+\begin{figure}[ht]
+\centering
+    \includegraphics[width = 0.8\textwidth] {Bilder/Bench}
+ 
+  \caption{Estimation of the sensitivity of the \ttgamma cross section for a magnetic moment of the top quark. The cross section measurement with its $1 \sigma$ errors is shown in blue. The central value for $d_V^{\gamma}$ is shown in red and its errors are shown as dashed lines in dark orange. The y-axis is logarithmic. }
+  \label{fig_ano_lim_bench}
 \end{figure}
 
 \section{Conclusion}
 
-The benchmark study shows that the $\mathrm{pp} \to \ttgamma$ channel is currently not well suited for a high precision measurement of a possible magnetic moment of the top quark. While the investigation of a hypothetical very high coupling shows that a limit could be set using either the event kinematics or a more precisely calculated cross section, this would require plenty of time and effort. The result would likely be unsatisfactory, so a further investigation  currently does ot feel sensible. In all likelihood it will remain challenging even after the next LHC run has delivered its results.  \\
+The benchmark study shows that the $\mathrm{pp} \to \ttgamma$ channel is currently not well suited for a precision measurement of a possible magnetic moment of the top quark. The sensitivity lies in the region of $d_V^{\gamma} = 2$. This result are not competitive with limits from chromomagnetic measurements. As a final conclusion, the continuation of the measurement of an anomalous magnetic moment in the \ttgamma sector cannot be recommended in the moment. \\
+%One way to enhance the precision would be NLO cross section calculations for different values of $d_V^{\gamma}$. Another is the improvement of the cross section measurement, which is dominated by systematic uncertainties in the moment. \todo{Rewrite}

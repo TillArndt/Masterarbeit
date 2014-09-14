@@ -1,4 +1,4 @@
-\documentclass[11pt,twoside,a4paper]{book}
+\documentclass[11pt,twoside,a4paper,headsepline]{scrbook}
 \usepackage{amsmath}
 \usepackage{color}
 \usepackage{upgreek}
@@ -17,6 +17,10 @@
 \usepackage{feynmf}
 \usepackage{lscape}
 \usepackage[separate-uncertainty,multi-part-units = single,per-mode = reciprocal]{siunitx}
+\usepackage[section]{placeins}
+
+\widowpenalty1000000
+\clubpenalty1000000
 
 \bibliographystyle{plain}
 
@@ -56,6 +60,13 @@ citecolor=darkblue}
 \newcommand{\PTslash}{\ensuremath{{p}_\mathrm{T}\hspace{-1.02em}/}\xspace}
 \newcommand{\ETm}[0]{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss}}} }
 
+\def\addtotoc#1{%           preface, bibliography, etc. shall be in the
+\cleardoublepage%         contents but without a chapter number
+\refstepcounter{chapter}%
+\addcontentsline{toc}{chapter}{\numberline{}#1}%
+\markboth {\MakeUppercase{%
+#1}}{}}
+
 \setcounter{tocdepth}{2}
 \setlength{\parindent}{0in}
 
@@ -91,7 +102,7 @@ Aachen \\}
    \vspace{1.3cm}
      im \\
    \vspace{0.2cm}
-      {\Large Juni 2010}\\
+      {\Large September 2014}\\
    \vspace{1.5cm}
       angefertigt im \\
    \vspace{0.3cm}
@@ -103,6 +114,10 @@ Aachen \\}
 
 \end{center}
 \end{titlepage}
+Ich versichere, dass ich die Arbeit selbstst\"andig verfasst und keine anderen als die
+angegebenen Quellen und Hilfsmittel benutzt, sowie Zitate kenntlich gemacht habe.\\
+
+Aachen, den
 
 \tableofcontents
 \newpage
@@ -114,7 +129,16 @@ Aachen \\}
 \input{./Simulation}
 \input{./Anormalous}
 \input{./ttgamma}
+\input{./Conclusion}
+\input{./Outlook}
+\input{./Appendix}
 
+\cleardoublepage
+\phantomsection
+
+\addcontentsline{toc}{chapter}{Bibliography}
 \bibliography{Masterarbeit}
+\include{Bibliography}
+\input{./Acknowledge}
 
 \end{document}
